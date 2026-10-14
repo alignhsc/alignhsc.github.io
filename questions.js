@@ -4,14 +4,20 @@ const questions = [
         id: "q11",
         questionNumber: "11",
         marks: 2,
+
         topic: "Functions",
+        subtopic: "Quadratic Functions",
+
+        skills: [
+            "parabolas",
+            "vertex_form",
+            "finding_equations"
+        ],
+
         difficulty: "Easy",
 
-        questionImage:
-            "questions/q11.png",
-        solutionImage: "solutions/q11ans.png",
-        answer:
-            "Worked solution for Question 11 will go here."
+        questionImage: "questions/q11.png",
+        solutionImage: "solutions/q11ans.png"
     },
 
 
@@ -19,7 +25,16 @@ const questions = [
         id: "q13",
         questionNumber: "13",
         marks: 3,
+
         topic: "Statistical Analysis",
+        subtopic: "Discrete Random Variables",
+
+        skills: [
+            "probability_distributions",
+            "expected_value",
+            "variance"
+        ],
+
         difficulty: "Medium",
 
         question:
@@ -34,15 +49,18 @@ const questions = [
         id: "q14",
         questionNumber: "14",
         marks: 2,
+
         topic: "Calculus",
+        subtopic: "Differentiation",
+
+        skills: [
+            "differentiation"
+        ],
+
         difficulty: "Easy",
 
-        questionImage:
-            "questions/q14.png",
-        solutionImage: "solutions/q14ans.png",
-
-        answer:
-            "Worked solution for Question 14 will go here."
+        questionImage: "questions/q14.png",
+        solutionImage: "solutions/q14ans.png"
     },
 
 
@@ -50,7 +68,18 @@ const questions = [
         id: "q17",
         questionNumber: "17",
         marks: 6,
+
         topic: "Calculus",
+        subtopic: "Exponential Modelling",
+
+        skills: [
+            "exponential_functions",
+            "graphing_models",
+            "limiting_value",
+            "rates_of_change",
+            "differentiation"
+        ],
+
         difficulty: "Medium",
 
         question:
@@ -65,14 +94,20 @@ const questions = [
         id: "q21",
         questionNumber: "21",
         marks: 3,
+
         topic: "Sequences and Series",
+        subtopic: "Geometric Series",
+
+        skills: [
+            "geometric_sequences",
+            "geometric_series",
+            "infinite_series"
+        ],
+
         difficulty: "Medium",
 
-        questionImage:
-            "questions/q21.png",
-        solutionImage: "solutions/ansq21.png",
-        answer:
-            "Worked solution for Question 21 will go here."
+        questionImage: "questions/q21.png",
+        solutionImage: "solutions/ansq21.png"
     },
 
 
@@ -80,7 +115,16 @@ const questions = [
         id: "q24",
         questionNumber: "24",
         marks: 3,
+
         topic: "Trigonometric Functions",
+        subtopic: "Radians and Circular Measure",
+
+        skills: [
+            "radians",
+            "arc_length",
+            "sector_area"
+        ],
+
         difficulty: "Medium",
 
         question:
@@ -95,7 +139,17 @@ const questions = [
         id: "q28",
         questionNumber: "28",
         marks: 5,
+
         topic: "Statistical Analysis",
+        subtopic: "Normal Distribution",
+
+        skills: [
+            "normal_distribution",
+            "standardisation",
+            "probability_intervals",
+            "conditional_probability"
+        ],
+
         difficulty: "Medium",
 
         question:
@@ -110,7 +164,16 @@ const questions = [
         id: "q30",
         questionNumber: "30",
         marks: 5,
+
         topic: "Trigonometric Functions",
+        subtopic: "Trigonometric Graphs and Equations",
+
+        skills: [
+            "trigonometric_graphs",
+            "graph_transformations",
+            "solving_trigonometric_equations"
+        ],
+
         difficulty: "Hard",
 
         question:
@@ -125,7 +188,18 @@ const questions = [
         id: "q31",
         questionNumber: "31",
         marks: 8,
+
         topic: "Financial Mathematics",
+        subtopic: "Annuities and Recurrence",
+
+        skills: [
+            "compound_interest",
+            "annuities",
+            "future_value",
+            "recurrence_relations",
+            "financial_modelling"
+        ],
+
         difficulty: "Hard",
 
         question:
@@ -140,7 +214,19 @@ const questions = [
         id: "q34",
         questionNumber: "34",
         marks: 8,
+
         topic: "Calculus",
+        subtopic: "Curve Sketching",
+
+        skills: [
+            "first_derivative",
+            "stationary_points",
+            "nature_of_stationary_points",
+            "second_derivative",
+            "points_of_inflection",
+            "curve_sketching"
+        ],
+
         difficulty: "Hard",
 
         question:
