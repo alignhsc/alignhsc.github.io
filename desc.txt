@@ -1,0 +1,9 @@
+welcome to the demo version of align hsc!
+
+The idea is very simple.
+Your questions. Your practice. At your pace.
+
+The questions can be sorted through various filters and then a printable pdf is
+created for you to work on :)
+
+As simple as that

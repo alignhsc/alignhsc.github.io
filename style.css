@@ -1,0 +1,168 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f6f7fb;
+    color: #222;
+}
+
+header {
+    text-align: center;
+    padding: 40px 20px 20px;
+}
+
+header h1 {
+    margin-bottom: 5px;
+}
+
+main {
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+}
+
+.generator {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.generator label {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+select,
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.checkboxes {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.checkboxes label {
+    font-weight: normal;
+    margin-top: 5px;
+}
+
+button {
+    margin-top: 25px;
+    padding: 13px 22px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#generateButton {
+    width: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
+.paper-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+#paper {
+    background: white;
+    padding: 50px;
+    margin-bottom: 60px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.paper-heading {
+    text-align: center;
+    padding-bottom: 30px;
+    border-bottom: 2px solid black;
+}
+
+.question {
+    margin-top: 40px;
+    page-break-inside: avoid;
+}
+
+.question-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.working-space {
+    height: 130px;
+    border-bottom: 1px dotted #aaa;
+}
+
+.solutions {
+    margin-top: 80px;
+    page-break-before: always;
+}
+
+.solution {
+    margin-top: 35px;
+}
+
+@media print {
+    body {
+        background: white;
+    }
+
+    header,
+    .generator,
+    .paper-buttons {
+        display: none;
+    }
+
+    main {
+        width: 100%;
+        max-width: none;
+    }
+
+    #paper {
+        box-shadow: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .question {
+        break-inside: avoid;
+    }
+
+    .solutions {
+        break-before: page;
+    }
+}
+
+.question-image {
+    width: 100%;
+    max-width: 750px;
+    height: auto;
+    display: block;
+    margin-top: 20px;
+}
+
+.solution-image {
+    width: 100%;
+    max-width: 750px;
+    height: auto;
+    display: block;
+    margin-top: 15px;
+}
