@@ -8,10 +8,9 @@ const questions = [
         topic: "Functions",
         subtopic: "Quadratic Functions",
 
-        skills: [
-            "parabolas",
-            "vertex_form",
-            "finding_equations"
+        syllabusDotpoints: [
+            "functions_quadratic_equations",
+            "functions_vertex_form"
         ],
 
         difficulty: "Easy",
@@ -29,10 +28,10 @@ const questions = [
         topic: "Statistical Analysis",
         subtopic: "Discrete Random Variables",
 
-        skills: [
-            "probability_distributions",
-            "expected_value",
-            "variance"
+        syllabusDotpoints: [
+            "stats_discrete_random_variables",
+            "stats_expected_value",
+            "stats_variance"
         ],
 
         difficulty: "Medium",
@@ -53,8 +52,8 @@ const questions = [
         topic: "Calculus",
         subtopic: "Differentiation",
 
-        skills: [
-            "differentiation"
+        syllabusDotpoints: [
+            "calc_basic_differentiation"
         ],
 
         difficulty: "Easy",
@@ -72,12 +71,10 @@ const questions = [
         topic: "Calculus",
         subtopic: "Exponential Modelling",
 
-        skills: [
-            "exponential_functions",
-            "graphing_models",
-            "limiting_value",
-            "rates_of_change",
-            "differentiation"
+        syllabusDotpoints: [
+            "exp_exponential_modelling",
+            "calc_rates_of_change",
+            "calc_differentiation_applications"
         ],
 
         difficulty: "Medium",
@@ -98,10 +95,10 @@ const questions = [
         topic: "Sequences and Series",
         subtopic: "Geometric Series",
 
-        skills: [
-            "geometric_sequences",
-            "geometric_series",
-            "infinite_series"
+        syllabusDotpoints: [
+            "seq_geometric_sequences",
+            "seq_geometric_series",
+            "seq_infinite_geometric_series"
         ],
 
         difficulty: "Medium",
@@ -119,10 +116,10 @@ const questions = [
         topic: "Trigonometric Functions",
         subtopic: "Radians and Circular Measure",
 
-        skills: [
-            "radians",
-            "arc_length",
-            "sector_area"
+        syllabusDotpoints: [
+            "trig_radian_measure",
+            "trig_arc_length",
+            "trig_sector_area"
         ],
 
         difficulty: "Medium",
@@ -143,11 +140,10 @@ const questions = [
         topic: "Statistical Analysis",
         subtopic: "Normal Distribution",
 
-        skills: [
-            "normal_distribution",
-            "standardisation",
-            "probability_intervals",
-            "conditional_probability"
+        syllabusDotpoints: [
+            "stats_normal_distribution",
+            "stats_standardisation",
+            "stats_conditional_probability"
         ],
 
         difficulty: "Medium",
@@ -168,10 +164,10 @@ const questions = [
         topic: "Trigonometric Functions",
         subtopic: "Trigonometric Graphs and Equations",
 
-        skills: [
-            "trigonometric_graphs",
-            "graph_transformations",
-            "solving_trigonometric_equations"
+        syllabusDotpoints: [
+            "trig_graphs",
+            "trig_graph_transformations",
+            "trig_solving_equations"
         ],
 
         difficulty: "Hard",
@@ -192,12 +188,11 @@ const questions = [
         topic: "Financial Mathematics",
         subtopic: "Annuities and Recurrence",
 
-        skills: [
-            "compound_interest",
-            "annuities",
-            "future_value",
-            "recurrence_relations",
-            "financial_modelling"
+        syllabusDotpoints: [
+            "finance_compound_interest",
+            "finance_annuities",
+            "finance_future_value",
+            "finance_recurrence_relations"
         ],
 
         difficulty: "Hard",
@@ -218,13 +213,11 @@ const questions = [
         topic: "Calculus",
         subtopic: "Curve Sketching",
 
-        skills: [
-            "first_derivative",
-            "stationary_points",
-            "nature_of_stationary_points",
-            "second_derivative",
-            "points_of_inflection",
-            "curve_sketching"
+        syllabusDotpoints: [
+            "calc_stationary_points",
+            "calc_second_derivative",
+            "calc_points_of_inflection",
+            "calc_curve_sketching"
         ],
 
         difficulty: "Hard",
