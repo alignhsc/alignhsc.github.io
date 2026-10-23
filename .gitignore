@@ -218,3 +218,22 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+# Python environment
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Local PDF ingestion data
+pipeline/input/*
+pipeline/manifests/*
+pipeline/output/*
+
+# Local review drafts
+admin/data/*
+admin/papers.json
+
+# System files
+.DS_Store

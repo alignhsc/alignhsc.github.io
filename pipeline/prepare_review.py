@@ -1,158 +1,89 @@
-
 #!/usr/bin/env python3
-
-# Review kit preparation
-# Converts cropped question and solution images into a reviewable folder
-
-from pathlib import Path
-import argparse
+"""Generate a paper index and independent review records; never publish crops.
+Run from alignhsc root: python pipeline/prepare_review.py
+"""
 import json
-import shutil
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+ADMIN = ROOT / 'admin'
+CROPS = ROOT / 'pipeline' / 'output' / 'crops'
+MANIFESTS = ROOT / 'pipeline' / 'manifests'
+OLD_KIT = ROOT / 'alignhsc-complete-review-kit' / 'alignhsc-review-kit'
 
 
-# Review preparation
-# Builds editable metadata and copies the images into a separate review folder
-def prepare_review(crops_dir, manifest_path, review_html, output_dir):
-    crop_data = json.loads(
-        (crops_dir / "crops.json").read_text(encoding="utf-8")
-    )
-
-    manifest = json.loads(
-        manifest_path.read_text(encoding="utf-8")
-    )
-
-    crop_records = crop_data.get("records", [])
-
-    manifest_records = {
-        item["id"]: item
-        for item in manifest.get("questions", [])
-    }
-
-    if not crop_records:
-        raise ValueError("No cropped question records found.")
-
-    if output_dir.exists():
-        raise FileExistsError(
-            f"Review folder already exists: {output_dir}\n"
-            "Choose a new folder to avoid losing your review progress."
-        )
-
-    if not review_html.is_file():
-        raise FileNotFoundError(
-            f"Cannot find review.html: {review_html}"
-        )
-
-    records = []
-    image_paths = set()
-
-    for crop in crop_records:
-        question_id = crop["id"]
-        source = manifest_records.get(question_id, {})
-
-        question_images = crop.get("questionImages", [])
-        solution_images = crop.get("solutionImages", [])
-
-        for image_path in question_images + solution_images:
-            relative_path = Path(image_path)
-
-            if (
-                relative_path.is_absolute()
-                or ".." in relative_path.parts
-                or not relative_path.parts
-                or relative_path.parts[0] not in ("questions", "solutions")
-            ):
-                raise ValueError(
-                    f"Unsafe image path: {image_path}"
-                )
-
-            if not (crops_dir / relative_path).is_file():
-                raise FileNotFoundError(
-                    f"Missing cropped image: {image_path}"
-                )
-
-            image_paths.add(image_path)
-
-        warnings = list(source.get("warnings", []))
-
-        if not solution_images:
-            warnings.append(
-                "No matched solution. Requires review."
-            )
-
-        record = {
-            "id": question_id,
-            "questionNumber": str(crop["questionNumber"]),
-            "school": manifest.get("school", ""),
-            "year": manifest.get("year"),
-            "syllabusVersion": "",
-            "questionType": source.get("questionType", ""),
-            "questionImages": question_images,
-            "solutionImages": solution_images,
-            "topic": "",
-            "subtopic": "",
-            "syllabusDotpoints": [],
-            "additionalTopics": [],
-            "difficulty": "",
-            "marks": source.get("marks") or 0,
-            "reviewStatus": "needs-review",
-            "reviewNotes": "; ".join(dict.fromkeys(warnings))
-        }
-
-        records.append(record)
-
-    # Output creation
-    # Creates the review kit without changing the website or previous reviews
-    output_dir.mkdir(parents=True)
-
-    shutil.copy2(
-        review_html,
-        output_dir / "review.html"
-    )
-
-    for image_path in sorted(image_paths):
-        source = crops_dir / image_path
-        destination = output_dir / image_path
-
-        destination.parent.mkdir(
-            parents=True,
-            exist_ok=True
-        )
-
-        shutil.copy2(source, destination)
-
-    records_path = output_dir / "records.json"
-
-    records_path.write_text(
-        json.dumps(records, indent=2, ensure_ascii=False),
-        encoding="utf-8"
-    )
-
-    print(f"Prepared {len(records)} questions.")
-    print(f"Review folder: {output_dir}")
-    print("All questions require review before publication.")
+def read_json(path):
+    return json.loads(path.read_text(encoding='utf-8'))
 
 
-# Command-line interface
-# Accepts input paths so the program works for any school or paper
-def main():
-    parser = argparse.ArgumentParser(
-        description="Prepare an alignhsc ingestion review kit."
-    )
+def build():
+    (ADMIN / 'data').mkdir(parents=True, exist_ok=True)
+    papers = []
+    for crop_file in sorted(CROPS.glob('*/crops.json')):
+        directory = crop_file.parent
+        raw = read_json(crop_file)
+        paper_id = raw.get('paperId') or directory.name
+        if not paper_id.replace('-', '').replace('_', '').isalnum():
+            print(f'Skipping unsafe paper ID: {paper_id}')
+            continue
+        manifest_file = MANIFESTS / f'{paper_id}.json'
+        if not manifest_file.exists():
+            # The manifest may have a different filename; match paperId field instead.
+            for candidate in MANIFESTS.glob('*.json'):
+                try:
+                    if read_json(candidate).get('paperId') == paper_id:
+                        manifest_file = candidate
+                        break
+                except (ValueError, OSError):
+                    pass
+        manifest = read_json(manifest_file) if manifest_file.exists() else {}
+        source = {str(q['id']): q for q in manifest.get('questions', [])}
+        records = []
+        for item in raw.get('records', []):
+            qid = str(item['id'])
+            meta = source.get(qid, {})
+            def valid_images(field):
+                output = []
+                for filename in item.get(field, []):
+                    path = Path(filename)
+                    if path.is_absolute() or '..' in path.parts or path.parts[0] not in ('questions', 'solutions'):
+                        raise ValueError(f'Unsafe image path {filename}')
+                    if not (directory / path).is_file():
+                        print(f'Warning: missing {directory / path}')
+                    output.append(filename)
+                return output
+            qimages = valid_images('questionImages')
+            simages = valid_images('solutionImages')
+            records.append({
+                'id': qid, 'questionNumber': str(item.get('questionNumber', meta.get('number', '?'))),
+                'school': manifest.get('school', paper_id), 'year': manifest.get('year', ''),
+                'questionType': meta.get('questionType', item.get('questionType', '')),
+                'questionImages': qimages, 'solutionImages': simages,
+                'topic': '', 'subtopic': '', 'additionalTopics': [], 'syllabusDotpoints': [],
+                'difficulty': 'Medium', 'marks': meta.get('marks') or item.get('marks') or 1,
+                'reviewStatus': 'needs-review', 'reviewNotes': '; '.join(meta.get('warnings', []))
+            })
+        target = ADMIN / 'data' / f'{paper_id}.json'
+        if not target.exists():
+            target.write_text(json.dumps(records, indent=2, ensure_ascii=False), encoding='utf-8')
+        else:
+            print(f'Preserved existing review data: {target}')
+        papers.append({'id': paper_id, 'label': f"{manifest.get('school', paper_id)} — {manifest.get('year', '')}".strip(' —'),
+                       'records': f'data/{paper_id}.json', 'images': f'../pipeline/output/crops/{directory.name}/', 'count': len(records)})
 
-    parser.add_argument("--crops", type=Path, required=True)
-    parser.add_argument("--manifest", type=Path, required=True)
-    parser.add_argument("--review-html", type=Path, required=True)
-    parser.add_argument("--output", type=Path, required=True)
+    if (OLD_KIT / 'records.json').exists():
+        pid = 'ascham-2024-existing-review'
+        papers.append({'id': pid, 'label': 'Ascham 2024 — original review kit',
+                       'records': '../alignhsc-complete-review-kit/alignhsc-review-kit/records.json',
+                       'images': '../alignhsc-complete-review-kit/alignhsc-review-kit/', 'count': len(read_json(OLD_KIT / 'records.json'))})
 
-    args = parser.parse_args()
-
-    prepare_review(
-        args.crops,
-        args.manifest,
-        args.review_html,
-        args.output
-    )
+    (ADMIN / 'papers.json').write_text(json.dumps({'papers': papers}, indent=2), encoding='utf-8')
+    print(f'Found {len(papers)} paper(s). Open admin/review.html via Live Server.')
+    for p in papers:
+        print(f" - {p['label']}: {p['count']} questions")
+    if not papers:
+        print('No crops found yet. Generate manifests and crops first.')
 
 
-if __name__ == "__main__":
-    main()
+if __name__ == '__main__':
+    build()

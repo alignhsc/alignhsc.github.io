@@ -2,16 +2,18 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>alignhsc · Ingestion Review</title>
 <style>
 :root{font-family:system-ui,-apple-system,sans-serif;color:#202b3c;background:#f5f7fa}*{box-sizing:border-box}body{margin:0}header{padding:18px 24px;background:#fff;border-bottom:1px solid #dfe5eb;display:flex;gap:14px;align-items:center;flex-wrap:wrap}h1{font-size:20px;margin:0 16px 0 0}button,input,select,textarea{font:inherit}button{cursor:pointer;border:1px solid #bfcbd6;border-radius:7px;padding:9px 13px;background:#fff;color:#182b40}button:hover{background:#edf4f9}button.primary{background:#144a68;color:white;border-color:#144a68}button:disabled{opacity:.4;cursor:default}.layout{display:grid;grid-template-columns:255px minmax(0,1fr);gap:16px;padding:16px}.side,.panel{background:#fff;border:1px solid #e0e5e8;border-radius:10px;padding:16px}.side{max-height:calc(100vh - 120px);overflow:auto}.item{width:100%;text-align:left;margin:4px 0}.item.active{background:#e1edf4;border-color:#7c9fb5}.meta{color:#536778;font-size:13px}.editor{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:16px 0}.field{display:flex;flex-direction:column;gap:4px;font-size:13px}.field input,.field select,.field textarea{border:1px solid #bfcbd6;border-radius:6px;padding:8px;width:100%}.wide{grid-column:span 3}.preview{display:grid;grid-template-columns:1fr 1fr;gap:16px}.preview img{max-width:100%;height:auto;display:block;border:1px solid #e0e5e8;margin:10px 0}.reviewbar{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}.stats{margin-left:auto;color:#536778}.warning{background:#fff8e5;padding:10px 12px;border-radius:7px;border:1px solid #efe0ab;font-size:13px}.syllabus-picker{border:1px solid #bfcbd6;border-radius:7px;padding:12px;grid-column:span 3}.syllabus-options{max-height:230px;overflow:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.syllabus-option{display:flex;align-items:flex-start;gap:8px;padding:6px;border-radius:5px;font-weight:400;font-size:13px}.syllabus-option input{width:auto;flex:none;margin-top:3px}.syllabus-option:hover{background:#edf4f9}.syllabus-heading{grid-column:span 2;font-weight:700;font-size:13px;padding:8px 0 2px;border-top:1px solid #e0e5e8}.syllabus-help{font-size:12px;color:#536778;margin:7px 0}.syllabus-picker>input{width:100%;padding:8px;border:1px solid #bfcbd6;border-radius:6px;margin:8px 0}label{font-weight:500}@media(max-width:950px){.layout{grid-template-columns:1fr}.side{max-height:210px}.preview{grid-template-columns:1fr}.editor{grid-template-columns:1fr 1fr}.wide{grid-column:span 2}}
+
+.manual-tools{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:10px 0}.manual-help{font-size:12px;color:#536778}.manual-status{font-size:12px;color:#8a5100}.manual-button{background:#e9f3ff}
 </style></head><body>
-<header><h1>alignhsc · Ingestion Review</h1><button id="load">Load saved review JSON</button><input id="file" type="file" accept="application/json" hidden><button id="save">Save review JSON</button><button id="export" class="primary">Export approved questions.js</button><span class="stats" id="stats"></span></header>
+<header><h1>alignhsc · Ingestion Review</h1><label for="paperSelect">Paper</label><select id="paperSelect"><option>Loading papers…</option></select><span id="paperStatus" class="meta"></span><button id="load">Load saved review JSON</button><input id="file" type="file" accept="application/json" hidden><button id="save">Save review JSON</button><button id="export" class="primary">Export approved questions.js</button><span class="stats" id="stats"></span></header>
 <div class="layout"><aside class="side"><label for="filter">Filter</label><select id="filter"><option value="all">All questions</option><option value="needs-review">Needs review</option><option value="approved">Approved</option><option value="rejected">Rejected</option></select><div id="list"></div></aside><main class="panel"><div id="info"></div><div class="warning">AI-generated topic suggestions are provisional. Check both images, including maths above/below text lines, and check primary topic, subtopic and marks. Syllabus dotpoints are optional for now. Approving means you have checked the full pair.</div><div class="editor">
 <label class="field">Primary topic<input id="topic"></label><label class="field">Subtopic<input id="subtopic"></label><label class="field">Difficulty<select id="difficulty"><option>Easy</option><option>Medium</option><option>Hard</option></select></label>
 <label class="field">Marks<input id="marks" type="number" min="1"></label><label class="field">Additional topics (comma-separated)<input id="additional"></label><label class="field">Optional syllabus dotpoint IDs<input id="dotpoints" readonly></label>
 <details class="syllabus-picker"><summary><strong>Optional: Choose syllabus dotpoints</strong></summary><div class="syllabus-help" id="syllabusStatus">Loading syllabus.js...</div><input id="syllabusSearch" type="search" placeholder="Search topics, focus areas or dotpoints"><div id="syllabusOptions" class="syllabus-options"></div><button id="suggest" type="button">Suggest matching dotpoints</button><div class="syllabus-help">Suggestions are unverified and optional.</div></details><label class="field wide">Review notes<textarea id="notes" rows="2"></textarea></label>
-</div><div class="reviewbar"><button id="approve" class="primary">Approve pair</button><button id="reject">Reject / needs recrop</button><button id="pending">Mark needs review</button><button id="prev">← Previous</button><button id="next">Next →</button></div><div class="preview"><section><h3>Original question</h3><div id="qimages"></div></section><section><h3>Worked solution</h3><div id="simages"></div></section></div></main></div>
-<script src="syllabus.js"></script>
+</div><div class="reviewbar"><button id="approve" class="primary">Approve pair</button><button id="reject">Reject / needs recrop</button><button id="pending">Mark needs review</button><button id="prev">← Previous</button><button id="next">Next →</button></div><div class="preview"><section><h3>Original question</h3><div id="qimages"></div></section><section><h3>Worked solution</h3><div class="manual-tools"><button type="button" id="manualSolution" class="manual-button">Add / replace solution screenshot</button><input type="file" id="manualSolutionInput" accept="image/png,image/jpeg,image/webp" hidden><button type="button" id="removeManualSolution">Undo manual screenshot</button></div><p class="manual-help">Select a screenshot (PNG/JPG/WebP). It downloads with a standard filename. Move that file from Downloads into your main project's <code>solutions/</code> folder and the review kit's <code>solutions/</code> folder. Keep the screenshot's actual extension.</p><p class="manual-status" id="manualStatus"></p><div id="simages"></div></section></div></main></div>
+<script src="../syllabus.js"></script>
 <script>
-let data=[];let selected=0;let syllabusEntries=[];let picked=new Set();const $=id=>document.getElementById(id);
+let data=[];let selected=0;let currentPaper=null;let papers=[];let imageBase="";let manualPreviewUrls=new Map();let syllabusEntries=[];let picked=new Set();const $=id=>document.getElementById(id);
 const fields=['topic','subtopic','difficulty','marks'];
 function download(name,content,type){const blob=new Blob([content],{type});const link=document.createElement('a');link.href=URL.createObjectURL(blob);link.download=name;link.click();setTimeout(()=>URL.revokeObjectURL(link.href),1000)}
 // Syllabus loading
@@ -72,14 +74,92 @@ $('suggest').onclick=suggestDotpoints;
 
 function saveField(){if(!data.length)return;const r=data[selected];fields.forEach(k=>r[k]=k==='marks'?Number($(k).value):$(k).value.trim());r.additionalTopics=$('additional').value.split(',').map(s=>s.trim()).filter(Boolean);r.syllabusDotpoints=[...picked];r.reviewNotes=$('notes').value.trim()}
 function show(){if(!data.length)return;const r=data[selected];$('info').textContent=`${r.id} · ${r.questionType} · ${r.marks} marks · ${r.reviewStatus}`;fields.forEach(k=>$(k).value=r[k]??'');$('additional').value=(r.additionalTopics||[]).join(', ');picked=new Set(r.syllabusDotpoints||[]);$('dotpoints').value=[...picked].join(', ');renderSyllabus();$('notes').value=r.reviewNotes||'';
- for(const [target,paths] of [['qimages',r.questionImages],['simages',r.solutionImages]]){const node=$(target);node.replaceChildren();for(const path of paths||[]){const img=document.createElement('img');img.src=path;img.alt=path;img.loading='lazy';node.append(img)}if(!paths?.length)node.textContent='Missing image'}
+ for(const [target,paths] of [['qimages',r.questionImages],['simages',r.solutionImages]]){const node=$(target);node.replaceChildren();for(const path of paths||[]){const img=document.createElement('img');img.src=manualPreviewUrls.get(path)||(imageBase+path);img.alt=path;img.loading='lazy';node.append(img)}if(!paths?.length)node.textContent='Missing image'}
+ $('manualStatus').textContent=r.manualSolutionPending?'Screenshot downloaded. Move it into the solutions/ folders before approving or exporting.':'';
  renderList();$('prev').disabled=selected===0;$('next').disabled=selected===data.length-1}
-function renderList(){const f=$('filter').value;const list=$('list');list.replaceChildren();data.forEach((r,i)=>{if(f!=='all'&&r.reviewStatus!==f)return;const b=document.createElement('button');b.className='item'+(i===selected?' active':'');b.textContent=`Q${r.questionNumber} · ${r.reviewStatus==='approved'?'✓':r.reviewStatus==='rejected'?'✕':'○'} ${r.topic||'Unclassified'}`;b.onclick=()=>{saveField();selected=i;show()};list.append(b)});const count=data.filter(r=>r.reviewStatus==='approved').length;$('stats').textContent=`${count}/${data.length} approved`}
-function mark(v){saveField();const r=data[selected];if(v==='approved'&&(!r.questionImages?.length||!r.solutionImages?.length||!r.topic||!r.difficulty)){alert('Before approval: question and solution images, primary topic, and difficulty are required. Check the crops before approving.');return}r.reviewStatus=v;show()}
-$('approve').onclick=()=>mark('approved');$('reject').onclick=()=>mark('rejected');$('pending').onclick=()=>mark('needs-review');$('prev').onclick=()=>{saveField();selected=Math.max(0,selected-1);show()};$('next').onclick=()=>{saveField();selected=Math.min(data.length-1,selected+1);show()};$('filter').onchange=renderList;
-$('save').onclick=()=>{saveField();download('ascham-reviewed.json',JSON.stringify(data,null,2),'application/json')};
-$('export').onclick=()=>{saveField();const approved=data.filter(r=>r.reviewStatus==='approved');if(!approved.length){alert('No approved questions yet.');return}const pub=approved.map(({reviewStatus,reviewNotes,classificationStatus, ...r})=>r);download('approved-questions.js',`const importedQuestions = ${JSON.stringify(pub,null,2)};\n`,'text/javascript');alert(`${approved.length} approved records exported. Merge with your existing questions.js after verifying image paths and checking duplicate IDs.`)};
-$('load').onclick=()=>$('file').click();$('file').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{const d=JSON.parse(await f.text());if(!Array.isArray(d))throw Error('Expected an array');data=d;selected=0;show()}catch(err){alert('Invalid JSON: '+err.message)}e.target.value=''};
-initialiseSyllabus();
-fetch('records.json').then(r=>{if(!r.ok)throw Error('Failed to load records.json');return r.json()}).then(d=>{data=d;show()}).catch(()=>{$('info').textContent='Use VS Code Live Server to open this folder, or choose Load saved review JSON.'});
+function renderList(){const f=$('filter').value;const list=$('list');list.replaceChildren();data.forEach((r,i)=>{if(f!=='all'&&r.reviewStatus!==f)return;const b=document.createElement('button');b.className='item'+(i===selected?' active':'');b.textContent=`Q${r.questionNumber} · ${r.reviewStatus==='approved'?'✓':r.reviewStatus==='rejected'?'✕':'○'} ${r.topic||'Unclassified'}`;b.onclick=()=>{saveField();persist();selected=i;show()};list.append(b)});const count=data.filter(r=>r.reviewStatus==='approved').length;$('stats').textContent=`${count}/${data.length} approved`}
+function mark(v){saveField();const r=data[selected];if(v==='approved'&&r.manualSolutionPending){if(!confirm('Have you moved your downloaded screenshot into BOTH solutions/ folders and refreshed to verify the image loads?'))return;delete r.manualSolutionPending;}if(v==='approved'&&(!r.questionImages?.length||!r.solutionImages?.length||!r.topic||!r.difficulty)){alert('Before approval: question and solution images, primary topic, and difficulty are required. Check the crops before approving.');return}r.reviewStatus=v;persist();show()}
+// Manual solution replacement
+// Downloads a chosen screenshot under a stable relative path for the review kit and website.
+$('manualSolution').onclick=()=>$('manualSolutionInput').click();
+$('manualSolutionInput').onchange=async event=>{
+  const file=event.target.files?.[0];
+  if(!file)return;
+  if(!['image/png','image/jpeg','image/webp'].includes(file.type)){
+    alert('Choose a PNG, JPG or WebP screenshot.');event.target.value='';return;
+  }
+  saveField();
+  const record=data[selected];
+  const extension={'image/png':'png','image/jpeg':'jpg','image/webp':'webp'}[file.type];
+  const filename=`${record.id}-manual-solution.${extension}`;
+  const path=`solutions/${filename}`;
+  // Use a temporary preview only. The exported metadata always keeps a real relative file path.
+  const url=URL.createObjectURL(file);
+  const previous=manualPreviewUrls.get(path);
+  if(previous)URL.revokeObjectURL(previous);
+  manualPreviewUrls.set(path,url);
+  if(!record.originalSolutionImages)record.originalSolutionImages=[...(record.solutionImages||[])];
+  record.solutionImages=[path];
+  record.manualSolutionPending=true;
+  record.reviewStatus='needs-review';
+  const link=document.createElement('a');
+  link.href=url;link.download=filename;document.body.append(link);link.click();link.remove();
+  event.target.value='';show();
+  alert(`Downloaded ${filename}. Copy it into BOTH solutions/ folders before approving. Then check the preview after reloading the page.`);
+};
+
+// Manual screenshot undo
+// Restores the originally extracted solution image paths if a replacement was mistaken.
+$('removeManualSolution').onclick=()=>{
+  saveField();const record=data[selected];
+  if(!record.originalSolutionImages){alert('No manual screenshot to undo.');return;}
+  record.solutionImages=[...record.originalSolutionImages];
+  delete record.originalSolutionImages;
+  delete record.manualSolutionPending;
+  record.reviewStatus='needs-review';persist();show();
+};
+
+$('approve').onclick=()=>mark('approved');$('reject').onclick=()=>mark('rejected');$('pending').onclick=()=>mark('needs-review');$('prev').onclick=()=>{saveField();persist();selected=Math.max(0,selected-1);show()};$('next').onclick=()=>{saveField();persist();selected=Math.min(data.length-1,selected+1);show()};$('filter').onchange=renderList;
+$('save').onclick=()=>{saveField();persist();download(`${currentPaper?.id||'paper'}-reviewed.json`,JSON.stringify(data,null,2),'application/json')};
+$('export').onclick=()=>{saveField();persist();const approved=data.filter(r=>r.reviewStatus==='approved');if(!approved.length){alert('No approved questions yet.');return}const pub=approved.map(({reviewStatus,reviewNotes,classificationStatus,originalSolutionImages,manualSolutionPending,...r})=>r);download(`${currentPaper?.id||'paper'}-approved-questions.js`,`const importedQuestions = ${JSON.stringify(pub,null,2)};\n`,'text/javascript');alert(`${approved.length} approved records exported. Merge with your existing questions.js after verifying image paths and checking duplicate IDs.`)};
+$('load').onclick=()=>$('file').click();$('file').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{const d=JSON.parse(await f.text());if(!Array.isArray(d))throw Error('Expected an array');data=d;selected=0;persist();show()}catch(err){alert('Invalid JSON: '+err.message)}e.target.value=''};
+// Review storage — independent draft per paper, saved on every field edit.
+// Download "Save review JSON" regularly as a portable backup.
+function storageKey(){return `alignhsc-review-v3:${currentPaper?.id||'none'}`;}
+function persist(){if(!currentPaper)return;try{localStorage.setItem(storageKey(),JSON.stringify(data))}catch(err){$('paperStatus').textContent='Browser storage full: download review JSON';}}
+function restore(){try{const saved=localStorage.getItem(storageKey());return saved?JSON.parse(saved):null}catch{return null}}
+let switched=false;
+async function selectPaper(id){
+  if(currentPaper){saveField();persist();}
+  const paper=papers.find(p=>p.id===id);if(!paper)return;
+  currentPaper=paper;imageBase=paper.images;selected=0;manualPreviewUrls.clear();
+  $('paperStatus').textContent='Loading…';
+  try{
+    const response=await fetch(paper.records,{cache:'no-store'});
+    if(!response.ok)throw Error(`Cannot load ${paper.records} (${response.status})`);
+    const fresh=await response.json();if(!Array.isArray(fresh))throw Error('Expected a records array');
+    const stored=restore();data=Array.isArray(stored)?stored:fresh;
+    $('paperStatus').textContent=`${data.length} questions · auto-saved in this browser`;
+    if(!data.length){$('info').textContent='No questions detected for this paper.';$('list').replaceChildren();return;}
+    show();
+  }catch(error){data=[];$('info').textContent='Unable to load paper: '+error.message;$('paperStatus').textContent='Check Live Server and file paths';}
+}
+async function initialisePapers(){
+  try{
+    const response=await fetch('papers.json',{cache:'no-store'});
+    if(!response.ok)throw Error('Run python pipeline/prepare_review.py first');
+    const result=await response.json();papers=result.papers||[];
+    const select=$('paperSelect');select.replaceChildren();
+    for(const paper of papers){const option=document.createElement('option');option.value=paper.id;option.textContent=paper.label;select.append(option)}
+    select.onchange=()=>selectPaper(select.value);
+    if(papers.length){const preferred=papers.find(p=>p.id==='north-sydney-girls-2026')||papers[0];select.value=preferred.id;await selectPaper(preferred.id);}
+    else $('info').textContent='No papers yet. Crop a PDF and rerun prepare_review.py.';
+  }catch(error){$('info').textContent=error.message+' — use Live Server from your project root.';}
+}
+// Autosave draft whenever input changes and when leaving page.
+document.querySelectorAll('.editor input,.editor textarea,.editor select').forEach(el=>{
+  el.addEventListener('change',()=>{saveField();persist()});
+});
+window.addEventListener('beforeunload',()=>{if(currentPaper){saveField();persist()}});
+initialiseSyllabus();initialisePapers();
 </script></body></html>
