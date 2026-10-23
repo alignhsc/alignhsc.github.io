@@ -1,3 +1,4 @@
+
 * {
     box-sizing: border-box;
 }
@@ -9,42 +10,192 @@ body {
     color: #222;
 }
 
-header {
-    text-align: center;
-    padding: 40px 20px 20px;
-}
 
-header h1 {
-    margin-bottom: 5px;
-}
+/* Site header */
 
-main {
-    width: 90%;
-    max-width: 900px;
-    margin: auto;
-}
-
-.generator {
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px 50px;
     background: white;
-    padding: 30px;
-    border-radius: 15px;
-    margin-bottom: 40px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid #e5e5e5;
 }
 
-.generator label {
-    display: block;
-    margin-top: 20px;
-    margin-bottom: 7px;
+.brand {
+    color: #11118f;
+    font-size: 28px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.main-nav {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-link {
+    color: #444;
+    font-size: 16px;
+    padding-bottom: 5px;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: #11118f;
+}
+
+.nav-link.active {
+    color: #11118f;
+    border-bottom: 2px solid #11118f;
+}
+
+
+/* Subject selection */
+
+.home-main, .page-main {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 70px 20px;
+}
+
+.subject-selection h1 {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.subject-grid {
+    display: flex;
+    justify-content: center;
+}
+
+.subject-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 420px;
+    min-height: 140px;
+    padding: 30px;
+    border: 3px solid #222;
+    border-radius: 16px;
+    text-align: center;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.subject-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.maths-advanced-card {
+    background: #fde8e8;
+    color: #12128f;
+}
+
+.subject-name {
+    font-size: 28px;
     font-weight: bold;
 }
 
-select,
-input[type="number"] {
+.subject-level {
+    margin-top: 10px;
+    font-size: 16px;
+    opacity: 0.7;
+}
+
+
+/* Question bank layout */
+
+.question-bank-main {
+    width: 92%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 24px;
+}
+
+.course-heading {
+    margin-bottom: 35px;
+}
+
+.course-heading h1 {
+    margin-bottom: 5px;
+}
+
+.course-subtitle {
+    color: #666;
+}
+
+.back-link {
+    color: #555;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.paper-builder {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.generator, .advanced-filters {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.main-filters {
+    flex: 1;
+    min-width: 0;
+}
+
+.advanced-filters {
+    width: 370px;
+    flex-shrink: 0;
+    border: 1px solid #ddd;
+}
+
+
+/* General filters */
+
+.filter-group {
+    margin-bottom: 28px;
+}
+
+.filter-group > label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.filter-help {
+    color: #666;
+    font-size: 13px;
+    margin: 5px 0 12px;
+}
+
+.filter-error {
+    color: #b42318;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+select, input[type="number"], input[type="text"] {
     width: 100%;
     padding: 12px;
+    background: white;
     border: 1px solid #ccc;
     border-radius: 8px;
+    font-size: 15px;
+}
+
+input:disabled {
+    background: #eee;
+    color: #999;
 }
 
 .checkboxes {
@@ -55,37 +206,221 @@ input[type="number"] {
 
 .checkboxes label {
     font-weight: normal;
-    margin-top: 5px;
 }
 
+
+/* Paper size */
+
+.paper-size-options {
+    display: grid;
+    grid-template-columns: 1fr 150px;
+    align-items: center;
+    gap: 12px 20px;
+}
+
+.paper-size-choice {
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
+    margin: 0 !important;
+    font-weight: normal !important;
+}
+
+
+/* Buttons */
+
 button {
-    margin-top: 25px;
-    padding: 13px 22px;
+    padding: 12px 20px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 15px;
 }
 
-#generateButton {
+.primary-button, .secondary-button {
+    display: block;
     width: 100%;
+    margin-top: 12px;
 }
 
-.hidden {
-    display: none;
+.primary-button {
+    color: white;
+    background: #11118f;
 }
+
+.secondary-button {
+    background: #eee;
+    color: #222;
+}
+
+
+/* Topic and dotpoint tree */
+
+.topic-block {
+    padding: 9px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.topic-row, .topic-row label, .focus-area-row, .dotpoint-row {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.topic-row {
+    font-weight: 600;
+}
+
+.topic-row label, .focus-area-row, .dotpoint-row {
+    cursor: pointer;
+}
+
+.expand-topic {
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    background: #eee;
+    border-radius: 5px;
+    flex-shrink: 0;
+}
+
+.topic-row input, .focus-area-row input, .dotpoint-row input {
+    width: auto;
+    flex-shrink: 0;
+}
+
+.topic-contents {
+    margin-left: 38px;
+    padding-top: 10px;
+}
+
+.focus-area-block {
+    margin-bottom: 14px;
+}
+
+.focus-area-row {
+    font-weight: 500;
+}
+
+.dotpoint-container {
+    margin: 6px 0 0 27px;
+}
+
+.dotpoint-row {
+    margin: 7px 0;
+    font-weight: normal;
+}
+
+
+/* Advanced filters */
+
+.advanced-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 22px;
+}
+
+.advanced-header h2 {
+    margin: 0;
+}
+
+#closeAdvancedFilters {
+    padding: 0;
+    background: none;
+    font-size: 28px;
+    line-height: 1;
+}
+
+.year-range {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.year-range input {
+    flex: 1;
+    min-width: 0;
+}
+
+
+/* School search */
+
+.school-filter {
+    position: relative;
+}
+
+.school-dropdown {
+    position: absolute;
+    z-index: 20;
+    left: 0;
+    right: 0;
+    max-height: 250px;
+    overflow-y: auto;
+    margin-top: 4px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.school-option {
+    display: block;
+    width: 100%;
+    padding: 10px 12px;
+    text-align: left;
+    background: white;
+    border-radius: 0;
+}
+
+.school-option:hover, .school-option:focus-visible {
+    background: #f2f2f8;
+}
+
+.school-no-results {
+    padding: 12px;
+    color: #777;
+    font-size: 14px;
+}
+
+.selected-schools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 10px;
+}
+
+.school-tag {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 9px;
+    background: #eeeeff;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+.school-tag button {
+    padding: 0;
+    background: none;
+    font-size: 17px;
+    line-height: 1;
+}
+
+
+/* Generated paper */
 
 .paper-buttons {
     display: flex;
-    gap: 10px;
     justify-content: flex-end;
-    margin-bottom: 20px;
+    gap: 10px;
+    margin: 35px 0 20px;
 }
 
 #paper {
-    background: white;
     padding: 50px;
     margin-bottom: 60px;
+    background: white;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
@@ -97,13 +432,13 @@ button {
 
 .question {
     margin-top: 40px;
-    page-break-inside: avoid;
 }
 
 .question-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    break-after: avoid;
 }
 
 .working-space {
@@ -111,8 +446,17 @@ button {
     border-bottom: 1px dotted #aaa;
 }
 
+.question-image, .solution-image {
+    display: block;
+    width: 100%;
+    max-width: 750px;
+    height: auto;
+    margin-top: 15px;
+}
+
 .solutions {
     margin-top: 80px;
+    break-before: page;
     page-break-before: always;
 }
 
@@ -120,49 +464,103 @@ button {
     margin-top: 35px;
 }
 
+.hidden {
+    display: none !important;
+}
+
+
+/* Smaller screens */
+
+@media (max-width: 850px) {
+    .site-header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 18px 20px;
+    }
+
+    .main-nav {
+        gap: 18px;
+    }
+
+    .paper-builder {
+        flex-direction: column;
+    }
+
+    .advanced-filters {
+        width: 100%;
+    }
+
+    .paper-size-options {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Print only question paper and solutions */
+
 @media print {
+    @page {
+        margin: 15mm;
+    }
+
     body {
         background: white;
     }
 
-    header,
-    .generator,
-    .paper-buttons {
-        display: none;
+    .site-header, .course-heading, .paper-builder, .paper-buttons {
+        display: none !important;
     }
 
-    main {
+    .question-bank-main, #paperSection, #paper {
         width: 100%;
         max-width: none;
-    }
-
-    #paper {
-        box-shadow: none;
-        padding: 0;
         margin: 0;
+        padding: 0;
+        box-shadow: none;
     }
 
-    .question {
+    .question-header {
+        break-after: avoid;
+    }
+
+    .question-image, .solution-image {
         break-inside: avoid;
+        max-width: 100%;
     }
 
     .solutions {
+        margin-top: 0;
         break-before: page;
+        page-break-before: always;
     }
 }
 
-.question-image {
-    width: 100%;
-    max-width: 750px;
-    height: auto;
-    display: block;
-    margin-top: 20px;
+/* Cross-topic notes */
+/* Compact notice that fits its content */
+.cross-topic-note {
+    display: table;
+    width: fit-content;
+    max-width: 100%;
+    box-sizing: border-box;
+
+    margin: 6px 0 12px;
+    padding: 5px 9px;
+
+    background-color: #eef5fc;
+    border: 1px solid #d6e6f5;
+    border-left: 3px solid #77b2ed;
+    border-radius: 5px;
+
+    color: #2887ed;
+    font-size: 0.78rem;
+    line-height: 1.35;
 }
 
-.solution-image {
-    width: 100%;
-    max-width: 750px;
-    height: auto;
-    display: block;
-    margin-top: 15px;
+
+/* Print settings */
+/* Hides cross-topic notices from printed papers and PDFs */
+@media print {
+    .cross-topic-note {
+        display: none !important;
+    }
 }

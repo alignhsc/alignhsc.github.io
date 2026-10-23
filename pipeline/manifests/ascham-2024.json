@@ -1,0 +1,1156 @@
+{
+  "paperId": "ascham-2024-advanced",
+  "sourcePdf": "Ascham 2024 2U Trials & Solutions.pdf",
+  "school": "Ascham",
+  "year": 2024,
+  "pdfPages": 88,
+  "notes": "Ascham-specific page mapping. First copy blank questions, second copy handwritten worked solutions. All crops need visual review, especially multi-page questions and multiple choice.",
+  "questions": [
+    {
+      "number": 1,
+      "question": [
+        {
+          "page": 3,
+          "rect": [
+            61,
+            160.21,
+            540,
+            318.44
+          ],
+          "maskNumber": true,
+          "continued": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 47,
+          "rect": [
+            61,
+            160.21,
+            540,
+            318.44
+          ],
+          "maskNumber": true,
+          "continued": false
+        }
+      ],
+      "id": "ascham-2024-q1"
+    },
+    {
+      "number": 2,
+      "question": [
+        {
+          "page": 3,
+          "rect": [
+            61,
+            302.44,
+            540,
+            780
+          ],
+          "maskNumber": true,
+          "continued": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 47,
+          "rect": [
+            61,
+            302.44,
+            540,
+            780
+          ],
+          "maskNumber": true,
+          "continued": false
+        }
+      ],
+      "id": "ascham-2024-q2"
+    },
+    {
+      "number": 3,
+      "question": [
+        {
+          "page": 4,
+          "rect": [
+            61,
+            48,
+            540,
+            377.72
+          ],
+          "maskNumber": true,
+          "continued": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 48,
+          "rect": [
+            61,
+            48,
+            540,
+            377.72
+          ],
+          "maskNumber": true,
+          "continued": false
+        }
+      ],
+      "id": "ascham-2024-q3"
+    },
+    {
+      "number": 4,
+      "question": [
+        {
+          "page": 4,
+          "rect": [
+            61,
+            361.72,
+            540,
+            493.06
+          ],
+          "maskNumber": true,
+          "continued": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 48,
+          "rect": [
+            61,
+            361.72,
+            540,
+            493.06
+          ],
+          "maskNumber": true,
+          "continued": false
+        }
+      ],
+      "id": "ascham-2024-q4"
+    },
+    {
+      "number": 5,
+      "question": [
+        {
+          "page": 4,
+          "rect": [
+            61,
+            477.06,
+            540,
+            780
+          ],
+          "maskNumber": true,
+          "continued": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 48,
+          "rect": [
+            61,
+            477.06,
+            540,
+            780
+          ],
+          "maskNumber": true,
+          "continued": false
+        }
+      ],
+      "id": "ascham-2024-q5"
+    },
+    {
+      "number": 6,
+      "question": [
+        {
+          "page": 5,
+          "rect": [
+            61,
+            48,
+            540,
+            243.29
+          ],
+          "maskNumber": true,
+          "continued": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 49,
+          "rect": [
+            61,
+            48,
+            540,
+            243.29
+          ],
+          "maskNumber": true,
+          "continued": false
+        }
+      ],
+      "id": "ascham-2024-q6"
+    },
+    {
+      "number": 7,
+      "question": [
+        {
+          "page": 5,
+          "rect": [
+            61,
+            227.29,
+            540,
+            501.7
+          ],
+          "maskNumber": true,
+          "continued": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 49,
+          "rect": [
+            61,
+            227.29,
+            540,
+            501.7
+          ],
+          "maskNumber": true,
+          "continued": false
+        }
+      ],
+      "id": "ascham-2024-q7"
+    },
+    {
+      "number": 8,
+      "question": [
+        {
+          "page": 5,
+          "rect": [
+            61,
+            485.7,
+            540,
+            780
+          ],
+          "maskNumber": true,
+          "continued": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 49,
+          "rect": [
+            61,
+            485.7,
+            540,
+            780
+          ],
+          "maskNumber": true,
+          "continued": false
+        }
+      ],
+      "id": "ascham-2024-q8"
+    },
+    {
+      "number": 9,
+      "question": [
+        {
+          "page": 6,
+          "rect": [
+            61,
+            48,
+            540,
+            419.72
+          ],
+          "maskNumber": true,
+          "continued": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 50,
+          "rect": [
+            61,
+            48,
+            540,
+            419.72
+          ],
+          "maskNumber": true,
+          "continued": false
+        }
+      ],
+      "id": "ascham-2024-q9"
+    },
+    {
+      "number": 10,
+      "question": [
+        {
+          "page": 6,
+          "rect": [
+            61,
+            403.72,
+            540,
+            780
+          ],
+          "maskNumber": true,
+          "continued": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 50,
+          "rect": [
+            61,
+            403.72,
+            540,
+            780
+          ],
+          "maskNumber": true,
+          "continued": false
+        }
+      ],
+      "id": "ascham-2024-q10"
+    },
+    {
+      "number": 11,
+      "question": [
+        {
+          "page": 9,
+          "rect": [
+            61,
+            77.27,
+            540,
+            420.92
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 53,
+          "rect": [
+            61,
+            77.27,
+            540,
+            420.92
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "id": "ascham-2024-q11"
+    },
+    {
+      "number": 12,
+      "question": [
+        {
+          "page": 9,
+          "rect": [
+            61,
+            446.2,
+            540,
+            780
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 53,
+          "rect": [
+            61,
+            446.2,
+            540,
+            780
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "id": "ascham-2024-q12"
+    },
+    {
+      "number": 13,
+      "question": [
+        {
+          "page": 10,
+          "rect": [
+            61,
+            77.27,
+            540,
+            780
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 54,
+          "rect": [
+            61,
+            77.27,
+            540,
+            780
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "id": "ascham-2024-q13"
+    },
+    {
+      "number": 14,
+      "question": [
+        {
+          "page": 11,
+          "rect": [
+            61,
+            77.27,
+            540,
+            272.24
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 55,
+          "rect": [
+            61,
+            77.27,
+            540,
+            272.24
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "id": "ascham-2024-q14"
+    },
+    {
+      "number": 15,
+      "question": [
+        {
+          "page": 11,
+          "rect": [
+            61,
+            297.52,
+            540,
+            491.98
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 55,
+          "rect": [
+            61,
+            297.52,
+            540,
+            491.98
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "id": "ascham-2024-q15"
+    },
+    {
+      "number": 16,
+      "question": [
+        {
+          "page": 11,
+          "rect": [
+            61,
+            517.26,
+            540,
+            780
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 55,
+          "rect": [
+            61,
+            517.26,
+            540,
+            780
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "id": "ascham-2024-q16"
+    },
+    {
+      "number": 17,
+      "question": [
+        {
+          "page": 12,
+          "rect": [
+            61,
+            77.27,
+            540,
+            780
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 56,
+          "rect": [
+            61,
+            77.27,
+            540,
+            780
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "id": "ascham-2024-q17"
+    },
+    {
+      "number": 18,
+      "question": [
+        {
+          "page": 13,
+          "rect": [
+            61,
+            77.27,
+            540,
+            377.12
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 57,
+          "rect": [
+            61,
+            77.27,
+            540,
+            377.12
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "id": "ascham-2024-q18"
+    },
+    {
+      "number": 19,
+      "question": [
+        {
+          "page": 13,
+          "rect": [
+            61,
+            402.4,
+            540,
+            780
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 57,
+          "rect": [
+            61,
+            402.4,
+            540,
+            780
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "id": "ascham-2024-q19"
+    },
+    {
+      "number": 20,
+      "question": [
+        {
+          "page": 14,
+          "rect": [
+            61,
+            77.27,
+            540,
+            356.0
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 58,
+          "rect": [
+            61,
+            77.27,
+            540,
+            356.0
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "id": "ascham-2024-q20"
+    },
+    {
+      "number": 21,
+      "question": [
+        {
+          "page": 14,
+          "rect": [
+            61,
+            381.28,
+            540,
+            780
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 58,
+          "rect": [
+            61,
+            381.28,
+            540,
+            780
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "id": "ascham-2024-q21"
+    },
+    {
+      "number": 22,
+      "question": [
+        {
+          "page": 15,
+          "rect": [
+            61,
+            77.27,
+            540,
+            437.0
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 59,
+          "rect": [
+            61,
+            77.27,
+            540,
+            437.0
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "id": "ascham-2024-q22"
+    },
+    {
+      "number": 23,
+      "question": [
+        {
+          "page": 15,
+          "rect": [
+            61,
+            462.28,
+            540,
+            780
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 59,
+          "rect": [
+            61,
+            462.28,
+            540,
+            780
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "id": "ascham-2024-q23"
+    },
+    {
+      "number": 24,
+      "question": [
+        {
+          "page": 16,
+          "rect": [
+            61,
+            77.27,
+            540,
+            780
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 60,
+          "rect": [
+            61,
+            77.27,
+            540,
+            780
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "id": "ascham-2024-q24"
+    },
+    {
+      "number": 25,
+      "question": [
+        {
+          "page": 17,
+          "rect": [
+            61,
+            77.27,
+            540,
+            780
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 61,
+          "rect": [
+            61,
+            77.27,
+            540,
+            780
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "id": "ascham-2024-q25"
+    },
+    {
+      "number": 26,
+      "question": [
+        {
+          "page": 18,
+          "rect": [
+            61,
+            77.27,
+            540,
+            389.24
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 62,
+          "rect": [
+            61,
+            77.27,
+            540,
+            389.24
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "id": "ascham-2024-q26"
+    },
+    {
+      "number": 27,
+      "question": [
+        {
+          "page": 18,
+          "rect": [
+            61,
+            414.52,
+            540,
+            780
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 62,
+          "rect": [
+            61,
+            414.52,
+            540,
+            780
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "id": "ascham-2024-q27"
+    },
+    {
+      "number": 28,
+      "question": [
+        {
+          "page": 19,
+          "rect": [
+            61,
+            77.27,
+            540,
+            780
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 63,
+          "rect": [
+            61,
+            77.27,
+            540,
+            780
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "id": "ascham-2024-q28"
+    },
+    {
+      "number": 29,
+      "question": [
+        {
+          "page": 20,
+          "rect": [
+            61,
+            77.27,
+            540,
+            780
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 64,
+          "rect": [
+            61,
+            77.27,
+            540,
+            780
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "id": "ascham-2024-q29"
+    },
+    {
+      "number": 30,
+      "question": [
+        {
+          "page": 21,
+          "rect": [
+            61,
+            77.27,
+            540,
+            780
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 65,
+          "rect": [
+            61,
+            77.27,
+            540,
+            780
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "id": "ascham-2024-q30"
+    },
+    {
+      "number": 31,
+      "question": [
+        {
+          "page": 23,
+          "rect": [
+            61,
+            77.27,
+            540,
+            780
+          ],
+          "maskNumber": false,
+          "continued": false
+        },
+        {
+          "page": 24,
+          "rect": [
+            61,
+            77.27,
+            540,
+            780
+          ],
+          "maskNumber": false,
+          "continued": true
+        },
+        {
+          "page": 25,
+          "rect": [
+            61,
+            77.27,
+            540,
+            780
+          ],
+          "maskNumber": false,
+          "continued": true
+        }
+      ],
+      "solution": [
+        {
+          "page": 67,
+          "rect": [
+            61,
+            77.27,
+            540,
+            780
+          ],
+          "maskNumber": false,
+          "continued": false
+        },
+        {
+          "page": 68,
+          "rect": [
+            61,
+            77.27,
+            540,
+            780
+          ],
+          "maskNumber": false,
+          "continued": true
+        },
+        {
+          "page": 69,
+          "rect": [
+            61,
+            77.27,
+            540,
+            780
+          ],
+          "maskNumber": false,
+          "continued": true
+        }
+      ],
+      "id": "ascham-2024-q31"
+    },
+    {
+      "number": 32,
+      "question": [
+        {
+          "page": 26,
+          "rect": [
+            61,
+            77.27,
+            540,
+            780
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 70,
+          "rect": [
+            61,
+            77.27,
+            540,
+            780
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "id": "ascham-2024-q32"
+    },
+    {
+      "number": 33,
+      "question": [
+        {
+          "page": 27,
+          "rect": [
+            61,
+            77.27,
+            540,
+            780
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 71,
+          "rect": [
+            61,
+            77.27,
+            540,
+            780
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "id": "ascham-2024-q33"
+    },
+    {
+      "number": 34,
+      "question": [
+        {
+          "page": 29,
+          "rect": [
+            61,
+            77.27,
+            540,
+            780
+          ],
+          "maskNumber": false,
+          "continued": false
+        },
+        {
+          "page": 30,
+          "rect": [
+            61,
+            77.27,
+            540,
+            780
+          ],
+          "maskNumber": false,
+          "continued": true
+        }
+      ],
+      "solution": [
+        {
+          "page": 73,
+          "rect": [
+            61,
+            77.27,
+            540,
+            780
+          ],
+          "maskNumber": false,
+          "continued": false
+        },
+        {
+          "page": 74,
+          "rect": [
+            61,
+            77.27,
+            540,
+            780
+          ],
+          "maskNumber": false,
+          "continued": true
+        }
+      ],
+      "id": "ascham-2024-q34"
+    },
+    {
+      "number": 35,
+      "question": [
+        {
+          "page": 31,
+          "rect": [
+            61,
+            77.27,
+            540,
+            780
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 75,
+          "rect": [
+            61,
+            77.27,
+            540,
+            780
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "id": "ascham-2024-q35"
+    },
+    {
+      "number": 36,
+      "question": [
+        {
+          "page": 32,
+          "rect": [
+            61,
+            77.27,
+            540,
+            780
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 76,
+          "rect": [
+            61,
+            77.27,
+            540,
+            780
+          ],
+          "maskNumber": false,
+          "continued": false
+        }
+      ],
+      "id": "ascham-2024-q36"
+    }
+  ]
+}

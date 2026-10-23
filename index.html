@@ -1,167 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title> alignHSC </title>
-
+    <title>alignhsc</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-    <header>
-        <h1>alignHSC</h1>
-        <p>Build targeted Mathematics Advanced practice.</p>
+    <header class="site-header">
+        <a href="index.html" class="brand">alignhsc</a>
+        <nav class="main-nav">
+            <a href="index.html" class="nav-link active">Question Bank</a>
+            <a href="online-practice.html" class="nav-link">Practice Online</a>
+            <a href="about.html" class="nav-link">About</a>
+        </nav>
     </header>
-
-    <main>
-
-        <section class="generator">
-
-            <h2>Build a Practice Paper</h2>
-
-            <label for="topic">Topic</label>
-
-            <select id="topic">
-                <option value="all">All Topics</option>
-                <option value="Functions">Functions</option>
-                <option value="Calculus">Calculus</option>
-                <option value="Statistical Analysis">Statistical Analysis</option>
-                <option value="Sequences and Series">Sequences and Series</option>
-                <option value="Trigonometric Functions">Trigonometric Functions</option>
-                <option value="Financial Mathematics">Financial Mathematics</option>
-            </select>
-
-
-            <label>Difficulty</label>
-
-            <div class="checkboxes">
-
-                <label>
-                    <input
-                        type="checkbox"
-                        value="Easy"
-                        class="difficulty"
-                        checked
-                    >
-                    Easy
-                </label>
-
-                <label>
-                    <input
-                        type="checkbox"
-                        value="Medium"
-                        class="difficulty"
-                        checked
-                    >
-                    Medium
-                </label>
-
-                <label>
-                    <input
-                        type="checkbox"
-                        value="Hard"
-                        class="difficulty"
-                        checked
-                    >
-                    Hard
-                </label>
-
+    <main class="home-main">
+        <section class="subject-selection">
+            <h1>Choose a subject</h1>
+            <div class="subject-grid">
+                <a href="maths-advanced.html" class="subject-card maths-advanced-card">
+                    <span class="subject-name">Mathematics Advanced</span>
+                    <span class="subject-level">2 Unit</span>
+                </a>
             </div>
-
-
-            <label for="questionCount">
-                Number of Questions
-            </label>
-
-            <input
-                type="number"
-                id="questionCount"
-                value="5"
-                min="1"
-                max="10"
-            >
-
-
-            <button id="generateButton">
-                Generate Practice Paper
-            </button>
-
         </section>
-
-
-        <section id="paperSection" class="hidden">
-
-            <section id="resultsSection" class="hidden">
-                <h2>Record Your Results</h2>
-
-                <div id="resultsContainer"></div>
-
-                <button id="saveResultsButton">
-                    Save Results
-                </button>
-            </section>
-
-            <div class="paper-buttons">
-
-                <button id="regenerateButton">
-                    Regenerate
-                </button>
-
-                <button id="printButton">
-                    Print / Save as PDF
-                </button>
-
-            </div>
-
-
-            <div id="paper">
-
-                <div class="paper-heading">
-
-                    <h1>Mathematics Advanced</h1>
-
-                    <h2>Custom Practice Paper</h2>
-
-                    <p id="paperInfo"></p>
-
-                </div>
-
-
-                <div id="questionsContainer"></div>
-
-
-                <div class="solutions">
-
-                    <h1>Solutions</h1>
-
-                    <div id="solutionsContainer"></div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <section id="progressSection">
-            <h2>Your Syllabus Progress</h2>
-
-            <p id="overallCoverage"></p>
-
-            <div id="progressContainer"></div>
-        </section>
-
     </main>
-
-
-    <script src="skills.js"></script>
-    <script src="syllabus.js"></script>
-    <script src="questions.js"></script>
-    <script src="script.js"></script>
-
 </body>
-
 </html>

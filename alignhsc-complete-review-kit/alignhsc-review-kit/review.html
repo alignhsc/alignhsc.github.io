@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>alignhsc · Ingestion Review</title>
+<style>
+:root{font-family:system-ui,-apple-system,sans-serif;color:#202b3c;background:#f5f7fa}*{box-sizing:border-box}body{margin:0}header{padding:18px 24px;background:#fff;border-bottom:1px solid #dfe5eb;display:flex;gap:14px;align-items:center;flex-wrap:wrap}h1{font-size:20px;margin:0 16px 0 0}button,input,select,textarea{font:inherit}button{cursor:pointer;border:1px solid #bfcbd6;border-radius:7px;padding:9px 13px;background:#fff;color:#182b40}button:hover{background:#edf4f9}button.primary{background:#144a68;color:white;border-color:#144a68}button:disabled{opacity:.4;cursor:default}.layout{display:grid;grid-template-columns:255px minmax(0,1fr);gap:16px;padding:16px}.side,.panel{background:#fff;border:1px solid #e0e5e8;border-radius:10px;padding:16px}.side{max-height:calc(100vh - 120px);overflow:auto}.item{width:100%;text-align:left;margin:4px 0}.item.active{background:#e1edf4;border-color:#7c9fb5}.meta{color:#536778;font-size:13px}.editor{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:16px 0}.field{display:flex;flex-direction:column;gap:4px;font-size:13px}.field input,.field select,.field textarea{border:1px solid #bfcbd6;border-radius:6px;padding:8px;width:100%}.wide{grid-column:span 3}.preview{display:grid;grid-template-columns:1fr 1fr;gap:16px}.preview img{max-width:100%;height:auto;display:block;border:1px solid #e0e5e8;margin:10px 0}.reviewbar{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}.stats{margin-left:auto;color:#536778}.warning{background:#fff8e5;padding:10px 12px;border-radius:7px;border:1px solid #efe0ab;font-size:13px}.syllabus-picker{border:1px solid #bfcbd6;border-radius:7px;padding:12px;grid-column:span 3}.syllabus-options{max-height:230px;overflow:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.syllabus-option{display:flex;align-items:flex-start;gap:8px;padding:6px;border-radius:5px;font-weight:400;font-size:13px}.syllabus-option input{width:auto;flex:none;margin-top:3px}.syllabus-option:hover{background:#edf4f9}.syllabus-heading{grid-column:span 2;font-weight:700;font-size:13px;padding:8px 0 2px;border-top:1px solid #e0e5e8}.syllabus-help{font-size:12px;color:#536778;margin:7px 0}.syllabus-picker>input{width:100%;padding:8px;border:1px solid #bfcbd6;border-radius:6px;margin:8px 0}label{font-weight:500}@media(max-width:950px){.layout{grid-template-columns:1fr}.side{max-height:210px}.preview{grid-template-columns:1fr}.editor{grid-template-columns:1fr 1fr}.wide{grid-column:span 2}}
+</style></head><body>
+<header><h1>alignhsc · Ingestion Review</h1><button id="load">Load saved review JSON</button><input id="file" type="file" accept="application/json" hidden><button id="save">Save review JSON</button><button id="export" class="primary">Export approved questions.js</button><span class="stats" id="stats"></span></header>
+<div class="layout"><aside class="side"><label for="filter">Filter</label><select id="filter"><option value="all">All questions</option><option value="needs-review">Needs review</option><option value="approved">Approved</option><option value="rejected">Rejected</option></select><div id="list"></div></aside><main class="panel"><div id="info"></div><div class="warning">AI-generated topic suggestions are provisional. Check both images, including maths above/below text lines, and check primary topic, subtopic and marks. Syllabus dotpoints are optional for now. Approving means you have checked the full pair.</div><div class="editor">
+<label class="field">Primary topic<input id="topic"></label><label class="field">Subtopic<input id="subtopic"></label><label class="field">Difficulty<select id="difficulty"><option>Easy</option><option>Medium</option><option>Hard</option></select></label>
+<label class="field">Marks<input id="marks" type="number" min="1"></label><label class="field">Additional topics (comma-separated)<input id="additional"></label><label class="field">Optional syllabus dotpoint IDs<input id="dotpoints" readonly></label>
+<details class="syllabus-picker"><summary><strong>Optional: Choose syllabus dotpoints</strong></summary><div class="syllabus-help" id="syllabusStatus">Loading syllabus.js...</div><input id="syllabusSearch" type="search" placeholder="Search topics, focus areas or dotpoints"><div id="syllabusOptions" class="syllabus-options"></div><button id="suggest" type="button">Suggest matching dotpoints</button><div class="syllabus-help">Suggestions are unverified and optional.</div></details><label class="field wide">Review notes<textarea id="notes" rows="2"></textarea></label>
+</div><div class="reviewbar"><button id="approve" class="primary">Approve pair</button><button id="reject">Reject / needs recrop</button><button id="pending">Mark needs review</button><button id="prev">← Previous</button><button id="next">Next →</button></div><div class="preview"><section><h3>Original question</h3><div id="qimages"></div></section><section><h3>Worked solution</h3><div id="simages"></div></section></div></main></div>
+<script src="syllabus.js"></script>
+<script>
+let data=[];let selected=0;let syllabusEntries=[];let picked=new Set();const $=id=>document.getElementById(id);
+const fields=['topic','subtopic','difficulty','marks'];
+function download(name,content,type){const blob=new Blob([content],{type});const link=document.createElement('a');link.href=URL.createObjectURL(blob);link.download=name;link.click();setTimeout(()=>URL.revokeObjectURL(link.href),1000)}
+// Syllabus loading
+// Flattens the project's real topic/focus-area/dotpoint hierarchy
+function initialiseSyllabus(){
+  if(typeof SYLLABUS==='undefined'){
+    $('syllabusStatus').textContent='Missing syllabus.js. Copy your real alignhsc syllabus.js into this folder and refresh.';
+    return;
+  }
+  syllabusEntries=[];
+  for(const [topic,details] of Object.entries(SYLLABUS)){
+    for(const [focus,ids] of Object.entries(details.focusAreas||{})){
+      for(const id of ids) syllabusEntries.push({id,topic,focus,label:id.replace(/^(functions|trig|seq|calc|exp|log|stats|finance)_/,'').replaceAll('_',' ').replace(/\b\w/g,ch=>ch.toUpperCase())});
+    }
+  }
+  $('syllabusStatus').textContent=`${syllabusEntries.length} real dotpoints loaded. Select all that apply.`;
+  renderSyllabus();
+}
+
+// Dotpoint options
+// Displays searchable grouped checkboxes and stores checked IDs
+function renderSyllabus(){
+  const area=$('syllabusOptions');area.replaceChildren();
+  const term=$('syllabusSearch').value.trim().toLowerCase();
+  const matches=syllabusEntries.filter(e=>[e.label,e.id,e.topic,e.focus].some(s=>s.toLowerCase().includes(term)));
+  let last='';
+  for(const e of matches){
+    const group=`${e.topic} / ${e.focus}`;
+    if(group!==last){const h=document.createElement('div');h.className='syllabus-heading';h.textContent=group;area.append(h);last=group;}
+    const label=document.createElement('label');label.className='syllabus-option';
+    const checkbox=document.createElement('input');checkbox.type='checkbox';checkbox.checked=picked.has(e.id);
+    checkbox.onchange=()=>{if(checkbox.checked)picked.add(e.id);else picked.delete(e.id);$('dotpoints').value=[...picked].join(', ')};
+    const words=document.createElement('span');words.textContent=`${e.label} (${e.id})`;
+    label.append(checkbox,words);area.append(label);
+  }
+  if(!matches.length)area.textContent='No dotpoints match your search.';
+}
+
+// Optional classifications
+// Suggests matching syllabus IDs from topic and subtopic words; user must verify
+function suggestDotpoints(){
+  const r=data[selected];if(!r||!syllabusEntries.length)return;
+  const phrase=`${r.topic||''} ${r.subtopic||''}`.toLowerCase();
+  const terms=new Set(phrase.split(/[^a-z]+/).filter(w=>w.length>3&&!['mathematics','functions','analysis','advanced'].includes(w)));
+  const candidates=syllabusEntries.map(e=>{
+    const hay=`${e.label} ${e.focus}`.toLowerCase();
+    let score=0;for(const w of terms)if(hay.includes(w)||w.slice(0,-1).length>3&&hay.includes(w.slice(0,-1)))score++;
+    if(e.topic.toLowerCase()===String(r.topic).toLowerCase())score+=0.25;
+    return {e,score};
+  }).filter(x=>x.score>=1).sort((a,b)=>b.score-a.score).slice(0,4);
+  if(!candidates.length){alert('No clear suggested dotpoints. Please choose them from the list.');return;}
+  for(const {e} of candidates)picked.add(e.id);
+  $('dotpoints').value=[...picked].join(', ');renderSyllabus();
+  alert('Suggested dotpoints selected. Verify them before approving.');
+}
+$('syllabusSearch').oninput=renderSyllabus;
+$('suggest').onclick=suggestDotpoints;
+
+function saveField(){if(!data.length)return;const r=data[selected];fields.forEach(k=>r[k]=k==='marks'?Number($(k).value):$(k).value.trim());r.additionalTopics=$('additional').value.split(',').map(s=>s.trim()).filter(Boolean);r.syllabusDotpoints=[...picked];r.reviewNotes=$('notes').value.trim()}
+function show(){if(!data.length)return;const r=data[selected];$('info').textContent=`${r.id} · ${r.questionType} · ${r.marks} marks · ${r.reviewStatus}`;fields.forEach(k=>$(k).value=r[k]??'');$('additional').value=(r.additionalTopics||[]).join(', ');picked=new Set(r.syllabusDotpoints||[]);$('dotpoints').value=[...picked].join(', ');renderSyllabus();$('notes').value=r.reviewNotes||'';
+ for(const [target,paths] of [['qimages',r.questionImages],['simages',r.solutionImages]]){const node=$(target);node.replaceChildren();for(const path of paths||[]){const img=document.createElement('img');img.src=path;img.alt=path;img.loading='lazy';node.append(img)}if(!paths?.length)node.textContent='Missing image'}
+ renderList();$('prev').disabled=selected===0;$('next').disabled=selected===data.length-1}
+function renderList(){const f=$('filter').value;const list=$('list');list.replaceChildren();data.forEach((r,i)=>{if(f!=='all'&&r.reviewStatus!==f)return;const b=document.createElement('button');b.className='item'+(i===selected?' active':'');b.textContent=`Q${r.questionNumber} · ${r.reviewStatus==='approved'?'✓':r.reviewStatus==='rejected'?'✕':'○'} ${r.topic||'Unclassified'}`;b.onclick=()=>{saveField();selected=i;show()};list.append(b)});const count=data.filter(r=>r.reviewStatus==='approved').length;$('stats').textContent=`${count}/${data.length} approved`}
+function mark(v){saveField();const r=data[selected];if(v==='approved'&&(!r.questionImages?.length||!r.solutionImages?.length||!r.topic||!r.difficulty)){alert('Before approval: question and solution images, primary topic, and difficulty are required. Check the crops before approving.');return}r.reviewStatus=v;show()}
+$('approve').onclick=()=>mark('approved');$('reject').onclick=()=>mark('rejected');$('pending').onclick=()=>mark('needs-review');$('prev').onclick=()=>{saveField();selected=Math.max(0,selected-1);show()};$('next').onclick=()=>{saveField();selected=Math.min(data.length-1,selected+1);show()};$('filter').onchange=renderList;
+$('save').onclick=()=>{saveField();download('ascham-reviewed.json',JSON.stringify(data,null,2),'application/json')};
+$('export').onclick=()=>{saveField();const approved=data.filter(r=>r.reviewStatus==='approved');if(!approved.length){alert('No approved questions yet.');return}const pub=approved.map(({reviewStatus,reviewNotes,classificationStatus, ...r})=>r);download('approved-questions.js',`const importedQuestions = ${JSON.stringify(pub,null,2)};\n`,'text/javascript');alert(`${approved.length} approved records exported. Merge with your existing questions.js after verifying image paths and checking duplicate IDs.`)};
+$('load').onclick=()=>$('file').click();$('file').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{const d=JSON.parse(await f.text());if(!Array.isArray(d))throw Error('Expected an array');data=d;selected=0;show()}catch(err){alert('Invalid JSON: '+err.message)}e.target.value=''};
+initialiseSyllabus();
+fetch('records.json').then(r=>{if(!r.ok)throw Error('Failed to load records.json');return r.json()}).then(d=>{data=d;show()}).catch(()=>{$('info').textContent='Use VS Code Live Server to open this folder, or choose Load saved review JSON.'});
+</script></body></html>

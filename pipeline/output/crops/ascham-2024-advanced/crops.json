@@ -1,0 +1,372 @@
+{
+  "paperId": "ascham-2024-advanced",
+  "records": [
+    {
+      "id": "ascham-2024-q1",
+      "questionNumber": "1",
+      "questionImages": [
+        "questions/ascham-2024-q1-1.jpg"
+      ],
+      "solutionImages": [
+        "solutions/ascham-2024-q1-1.jpg"
+      ]
+    },
+    {
+      "id": "ascham-2024-q2",
+      "questionNumber": "2",
+      "questionImages": [
+        "questions/ascham-2024-q2-1.jpg"
+      ],
+      "solutionImages": [
+        "solutions/ascham-2024-q2-1.jpg"
+      ]
+    },
+    {
+      "id": "ascham-2024-q3",
+      "questionNumber": "3",
+      "questionImages": [
+        "questions/ascham-2024-q3-1.jpg"
+      ],
+      "solutionImages": [
+        "solutions/ascham-2024-q3-1.jpg"
+      ]
+    },
+    {
+      "id": "ascham-2024-q4",
+      "questionNumber": "4",
+      "questionImages": [
+        "questions/ascham-2024-q4-1.jpg"
+      ],
+      "solutionImages": [
+        "solutions/ascham-2024-q4-1.jpg"
+      ]
+    },
+    {
+      "id": "ascham-2024-q5",
+      "questionNumber": "5",
+      "questionImages": [
+        "questions/ascham-2024-q5-1.jpg"
+      ],
+      "solutionImages": [
+        "solutions/ascham-2024-q5-1.jpg"
+      ]
+    },
+    {
+      "id": "ascham-2024-q6",
+      "questionNumber": "6",
+      "questionImages": [
+        "questions/ascham-2024-q6-1.jpg"
+      ],
+      "solutionImages": [
+        "solutions/ascham-2024-q6-1.jpg"
+      ]
+    },
+    {
+      "id": "ascham-2024-q7",
+      "questionNumber": "7",
+      "questionImages": [
+        "questions/ascham-2024-q7-1.jpg"
+      ],
+      "solutionImages": [
+        "solutions/ascham-2024-q7-1.jpg"
+      ]
+    },
+    {
+      "id": "ascham-2024-q8",
+      "questionNumber": "8",
+      "questionImages": [
+        "questions/ascham-2024-q8-1.jpg"
+      ],
+      "solutionImages": [
+        "solutions/ascham-2024-q8-1.jpg"
+      ]
+    },
+    {
+      "id": "ascham-2024-q9",
+      "questionNumber": "9",
+      "questionImages": [
+        "questions/ascham-2024-q9-1.jpg"
+      ],
+      "solutionImages": [
+        "solutions/ascham-2024-q9-1.jpg"
+      ]
+    },
+    {
+      "id": "ascham-2024-q10",
+      "questionNumber": "10",
+      "questionImages": [
+        "questions/ascham-2024-q10-1.jpg"
+      ],
+      "solutionImages": [
+        "solutions/ascham-2024-q10-1.jpg"
+      ]
+    },
+    {
+      "id": "ascham-2024-q11",
+      "questionNumber": "11",
+      "questionImages": [
+        "questions/ascham-2024-q11-1.jpg"
+      ],
+      "solutionImages": [
+        "solutions/ascham-2024-q11-1.jpg"
+      ]
+    },
+    {
+      "id": "ascham-2024-q12",
+      "questionNumber": "12",
+      "questionImages": [
+        "questions/ascham-2024-q12-1.jpg"
+      ],
+      "solutionImages": [
+        "solutions/ascham-2024-q12-1.jpg"
+      ]
+    },
+    {
+      "id": "ascham-2024-q13",
+      "questionNumber": "13",
+      "questionImages": [
+        "questions/ascham-2024-q13-1.jpg"
+      ],
+      "solutionImages": [
+        "solutions/ascham-2024-q13-1.jpg"
+      ]
+    },
+    {
+      "id": "ascham-2024-q14",
+      "questionNumber": "14",
+      "questionImages": [
+        "questions/ascham-2024-q14-1.jpg"
+      ],
+      "solutionImages": [
+        "solutions/ascham-2024-q14-1.jpg"
+      ]
+    },
+    {
+      "id": "ascham-2024-q15",
+      "questionNumber": "15",
+      "questionImages": [
+        "questions/ascham-2024-q15-1.jpg"
+      ],
+      "solutionImages": [
+        "solutions/ascham-2024-q15-1.jpg"
+      ]
+    },
+    {
+      "id": "ascham-2024-q16",
+      "questionNumber": "16",
+      "questionImages": [
+        "questions/ascham-2024-q16-1.jpg"
+      ],
+      "solutionImages": [
+        "solutions/ascham-2024-q16-1.jpg"
+      ]
+    },
+    {
+      "id": "ascham-2024-q17",
+      "questionNumber": "17",
+      "questionImages": [
+        "questions/ascham-2024-q17-1.jpg"
+      ],
+      "solutionImages": [
+        "solutions/ascham-2024-q17-1.jpg"
+      ]
+    },
+    {
+      "id": "ascham-2024-q18",
+      "questionNumber": "18",
+      "questionImages": [
+        "questions/ascham-2024-q18-1.jpg"
+      ],
+      "solutionImages": [
+        "solutions/ascham-2024-q18-1.jpg"
+      ]
+    },
+    {
+      "id": "ascham-2024-q19",
+      "questionNumber": "19",
+      "questionImages": [
+        "questions/ascham-2024-q19-1.jpg"
+      ],
+      "solutionImages": [
+        "solutions/ascham-2024-q19-1.jpg"
+      ]
+    },
+    {
+      "id": "ascham-2024-q20",
+      "questionNumber": "20",
+      "questionImages": [
+        "questions/ascham-2024-q20-1.jpg"
+      ],
+      "solutionImages": [
+        "solutions/ascham-2024-q20-1.jpg"
+      ]
+    },
+    {
+      "id": "ascham-2024-q21",
+      "questionNumber": "21",
+      "questionImages": [
+        "questions/ascham-2024-q21-1.jpg"
+      ],
+      "solutionImages": [
+        "solutions/ascham-2024-q21-1.jpg"
+      ]
+    },
+    {
+      "id": "ascham-2024-q22",
+      "questionNumber": "22",
+      "questionImages": [
+        "questions/ascham-2024-q22-1.jpg"
+      ],
+      "solutionImages": [
+        "solutions/ascham-2024-q22-1.jpg"
+      ]
+    },
+    {
+      "id": "ascham-2024-q23",
+      "questionNumber": "23",
+      "questionImages": [
+        "questions/ascham-2024-q23-1.jpg"
+      ],
+      "solutionImages": [
+        "solutions/ascham-2024-q23-1.jpg"
+      ]
+    },
+    {
+      "id": "ascham-2024-q24",
+      "questionNumber": "24",
+      "questionImages": [
+        "questions/ascham-2024-q24-1.jpg"
+      ],
+      "solutionImages": [
+        "solutions/ascham-2024-q24-1.jpg"
+      ]
+    },
+    {
+      "id": "ascham-2024-q25",
+      "questionNumber": "25",
+      "questionImages": [
+        "questions/ascham-2024-q25-1.jpg"
+      ],
+      "solutionImages": [
+        "solutions/ascham-2024-q25-1.jpg"
+      ]
+    },
+    {
+      "id": "ascham-2024-q26",
+      "questionNumber": "26",
+      "questionImages": [
+        "questions/ascham-2024-q26-1.jpg"
+      ],
+      "solutionImages": [
+        "solutions/ascham-2024-q26-1.jpg"
+      ]
+    },
+    {
+      "id": "ascham-2024-q27",
+      "questionNumber": "27",
+      "questionImages": [
+        "questions/ascham-2024-q27-1.jpg"
+      ],
+      "solutionImages": [
+        "solutions/ascham-2024-q27-1.jpg"
+      ]
+    },
+    {
+      "id": "ascham-2024-q28",
+      "questionNumber": "28",
+      "questionImages": [
+        "questions/ascham-2024-q28-1.jpg"
+      ],
+      "solutionImages": [
+        "solutions/ascham-2024-q28-1.jpg"
+      ]
+    },
+    {
+      "id": "ascham-2024-q29",
+      "questionNumber": "29",
+      "questionImages": [
+        "questions/ascham-2024-q29-1.jpg"
+      ],
+      "solutionImages": [
+        "solutions/ascham-2024-q29-1.jpg"
+      ]
+    },
+    {
+      "id": "ascham-2024-q30",
+      "questionNumber": "30",
+      "questionImages": [
+        "questions/ascham-2024-q30-1.jpg"
+      ],
+      "solutionImages": [
+        "solutions/ascham-2024-q30-1.jpg"
+      ]
+    },
+    {
+      "id": "ascham-2024-q31",
+      "questionNumber": "31",
+      "questionImages": [
+        "questions/ascham-2024-q31-1.jpg",
+        "questions/ascham-2024-q31-2.jpg",
+        "questions/ascham-2024-q31-3.jpg"
+      ],
+      "solutionImages": [
+        "solutions/ascham-2024-q31-1.jpg",
+        "solutions/ascham-2024-q31-2.jpg",
+        "solutions/ascham-2024-q31-3.jpg"
+      ]
+    },
+    {
+      "id": "ascham-2024-q32",
+      "questionNumber": "32",
+      "questionImages": [
+        "questions/ascham-2024-q32-1.jpg"
+      ],
+      "solutionImages": [
+        "solutions/ascham-2024-q32-1.jpg"
+      ]
+    },
+    {
+      "id": "ascham-2024-q33",
+      "questionNumber": "33",
+      "questionImages": [
+        "questions/ascham-2024-q33-1.jpg"
+      ],
+      "solutionImages": [
+        "solutions/ascham-2024-q33-1.jpg"
+      ]
+    },
+    {
+      "id": "ascham-2024-q34",
+      "questionNumber": "34",
+      "questionImages": [
+        "questions/ascham-2024-q34-1.jpg",
+        "questions/ascham-2024-q34-2.jpg"
+      ],
+      "solutionImages": [
+        "solutions/ascham-2024-q34-1.jpg",
+        "solutions/ascham-2024-q34-2.jpg"
+      ]
+    },
+    {
+      "id": "ascham-2024-q35",
+      "questionNumber": "35",
+      "questionImages": [
+        "questions/ascham-2024-q35-1.jpg"
+      ],
+      "solutionImages": [
+        "solutions/ascham-2024-q35-1.jpg"
+      ]
+    },
+    {
+      "id": "ascham-2024-q36",
+      "questionNumber": "36",
+      "questionImages": [
+        "questions/ascham-2024-q36-1.jpg"
+      ],
+      "solutionImages": [
+        "solutions/ascham-2024-q36-1.jpg"
+      ]
+    }
+  ],
+  "warnings": []
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematics Advanced | alignhsc</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <a href="index.html" class="brand">alignhsc</a>
+        <nav class="main-nav">
+            <a href="index.html" class="nav-link active">Question Bank</a>
+            <a href="online-practice.html" class="nav-link">Practice Online</a>
+            <a href="about.html" class="nav-link">About</a>
+        </nav>
+    </header>
+
+    <main class="question-bank-main">
+        <section class="course-heading">
+            <a href="index.html" class="back-link">← Back to subjects</a>
+            <h1>Mathematics Advanced</h1>
+            <p class="course-subtitle">Build a custom HSC practice paper</p>
+
+        </section>
+        <section class="paper-builder">
+            <div class="generator main-filters">
+                <h2>Build a Practice Paper</h2>
+                <div class="filter-group">
+                    <label>Topics</label>
+                    <p class="filter-help">Choose multiple topics or expand them to select specific syllabus content.</p>
+                    <div id="topicTree"></div>
+                </div>
+                <div class="filter-group">
+                    <label>Difficulty</label>
+                    <div class="checkboxes">
+                        <label>
+                            <input type="checkbox" value="Easy" class="difficulty" checked>
+                            Easy
+                        </label>
+
+                        <label>
+                            <input type="checkbox" value="Medium" class="difficulty" checked>
+                            Medium
+                        </label>
+
+                        <label>
+                            <input type="checkbox" value="Hard" class="difficulty" checked>
+                            Hard
+                        </label>
+
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <label>Paper Size</label>
+                    <div class="paper-size-options">
+                        <label class="paper-size-choice">
+                            <input type="radio" name="paperSizeMode" value="questions" checked>
+                            Number of questions
+                        </label>
+
+                        <input type="number" id="questionCount" value="5" min="1" max="100">
+
+                        <label class="paper-size-choice">
+                            <input type="radio" name="paperSizeMode" value="marks">
+                            Total marks
+                        </label>
+
+                        <input type="number" id="targetMarks" value="20" min="1" max="100" disabled>
+                    </div>
+                    
+                </div>
+
+                <button type="button" id="advancedFiltersButton" class="secondary-button">Advanced Filters</button>
+                <p id="matchingCount" aria-live="polite"></p>
+                <button type="button" id="generateButton" class="primary-button">Generate Practice Paper</button>
+            
+            </div>
+            <aside id="advancedFiltersPanel" class="advanced-filters hidden">
+                <div class="advanced-header">
+                    <h2>Advanced Filters</h2>
+                    <button type="button" id="closeAdvancedFilters">&times</button>
+                </div>
+                <div class="filter-group school-filter">
+                    <label for="schoolSearch">Schools</label>
+                    <p class="filter-help">Leave empty to include all schools. You can select more than one.</p>
+                    <input type="text" id="schoolSearch" placeholder="Search schools..." autocomplete="off">
+                    <div id="schoolDropdown" class="school-dropdown hidden"></div>
+                    <div id="selectedSchools" class="selected-schools"></div>
+                    <p id="schoolError" class="filter-error hidden"></p>
+                </div>
+                <div class="filter-group">
+                    <label>Exam Year</label>
+                    <div class="year-range">
+                        <input type="number" id="yearFrom" placeholder="From">
+                        <span>to</span>
+                        <input type="number" id="yearTo" placeholder="To">
+                    </div>
+                    <p id="yearHelp" class="filter-help"></p>
+                    <p id="yearError" class="filter-error hidden"></p>
+                </div>
+                <div class="filter-group">
+                    <label for="syllabusVersion">Syllabus</label>
+                    <select id="syllabusVersion">
+                        <option value="all">All syllabus versions</option>
+                        <option value="2024">Mathematics Advanced 11–12 Syllabus (2024)</option>
+                        <option value="2017">Mathematics Advanced Stage 6 Syllabus (2017)</option>
+                        <option value="legacy">Legacy Mathematics 2 Unit syllabus</option>
+                    </select>
+                </div>
+                <button type="button" id="resetAdvancedFilters" class="secondary-button">Reset Advanced Filters</button>
+            </aside>
+        </section>
+        <section id="paperSection" class="hidden">
+            <div class="paper-buttons">
+                <button type="button" id="regenerateButton">Regenerate</button>
+                <button type="button" id="printButton">Print / Save as PDF</button>
+            </div>
+            <div id="paper">
+                <div class="paper-heading">
+                    <h1>Mathematics Advanced</h1>
+                    <h2>Custom Practice Paper</h2>
+                    <p id="paperInfo"></p>
+                </div>
+                <div id="questionsContainer"></div>
+                <div class="solutions">
+                    <h1>Solutions</h1>
+                    <div id="solutionsContainer"></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="syllabus.js"></script>
+    <script src="schools.js"></script>
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
