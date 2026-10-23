@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer | alignhsc</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="timer.css">
+    <script src="timer.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <a href="index.html" class="brand">alignhsc</a>
+        <nav class="main-nav" aria-label="Main navigation">
+            <a href="index.html" class="nav-link">Question Bank</a>
+            <a href="online-practice.html" class="nav-link">Practice Online</a>
+            <a href="timer.html" class="nav-link active" aria-current="page">Timer</a>
+            <a href="about.html" class="nav-link">About</a>
+        </nav>
+    </header>
+
+    <main class="timer-shell" data-theme="emerald" data-appearance="light">
+        <div class="timer-toolbar">
+            <button type="button" class="timer-back" id="timerBack" hidden>← All timers</button>
+            <div class="timer-theme-controls">
+                <label for="timerTheme">Colour theme</label>
+                <select id="timerTheme">
+                    <option value="emerald">Emerald green</option>
+                    <option value="burgundy">Burgundy & beige</option>
+                    <option value="minimal">Minimal</option>
+                    <option value="beach">Beach</option>
+                    <option value="underwater">Underwater</option>
+                    <option value="midnight">Midnight blue</option>
+                    <option value="lavender">Lavender</option>
+                    <option value="sunset">Sunset</option>
+                </select>
+                <button id="appearanceToggle" type="button" aria-label="Switch to dark mode">☾ Dark mode</button>
+            </div>
+        </div>
+        <section id="timerHome">
+            <div class="timer-heading">
+                <div><p class="timer-eyebrow">ALIGNHSC / TIMER</p><h1>Your study timer</h1><p>Choose how you want to study today.</p></div>
+                <span class="timer-heading-icon" aria-hidden="true">◷</span>
+            </div>
+            <div class="timer-mode-grid">
+                <button type="button" class="timer-mode-card" data-mode="stopwatch"><span class="mode-icon">⏱</span><strong>Stopwatch</strong><span>Track your time</span><small>Start, pause, laps and reset ↗</small></button>
+                <button type="button" class="timer-mode-card" data-mode="countdown"><span class="mode-icon">⌛</span><strong>Countdown</strong><span>Choose your style</span><small>8 WidgetForge designs ↗</small></button>
+                <button type="button" class="timer-mode-card" data-mode="focus"><span class="mode-icon">◉</span><strong>Focus Timer</strong><span>Study and breaks</span><small>Custom study cycles ↗</small></button>
+                <button type="button" class="timer-mode-card" data-mode="exam"><span class="mode-icon">▤</span><strong>Exam Timer</strong><span>Simulate an exam</span><small>Reading, writing and pacing ↗</small></button>
+            </div>
+        </section>
+
+        <section class="timer-detail" id="stopwatchPanel" hidden>
+            <p class="timer-eyebrow">STOPWATCH</p><h1>Track every minute</h1><p>Use laps to measure individual questions or study blocks.</p>
+            <div class="timer-stage" id="stopwatchStage"><span class="timer-stage-label">Elapsed time</span><div class="timer-clock" id="stopwatchDisplay" role="timer">00:00:00.0</div></div>
+            <div class="timer-actions"><button id="stopwatchStart" class="timer-primary">Start</button><button id="stopwatchLap">Lap</button><button id="stopwatchReset">Reset</button></div>
+            <button class="timer-zen-button" data-zen="stopwatch">⛶ Full-screen timer</button>
+            <ol class="timer-laps" id="stopwatchLaps" aria-label="Recorded laps"></ol>
+        </section>
+
+        <section class="timer-detail" id="countdownPanel" hidden>
+            <p class="timer-eyebrow">COUNTDOWN / WIDGETFORGE</p><h1>Choose your countdown</h1><p>All eight WidgetForge styles, with a target date and time you can customise.</p>
+            <div class="timer-form-grid"><label>Target date & time <input type="datetime-local" id="countdownTarget"></label><label>Countdown title <input type="text" id="countdownTitle" maxlength="70" value="My HSC Countdown"></label></div>
+            <details class="timer-style-picker"><summary>Choose a style <span id="selectedWidgetName">Flip</span> · 8 designs available</summary><div class="timer-style-grid" id="widgetStyles" aria-label="Countdown styles"></div></details>
+            <div class="timer-stage timer-widget-box" id="countdownStage"><div id="widgetMount" class="timer-widget-mount"></div><p id="widgetFallback" class="timer-muted">Choose a future date to preview the countdown.</p></div>
+            <button class="timer-zen-button" data-zen="countdown">⛶ Full-screen countdown</button>
+            <div class="timer-actions"><button class="timer-primary" id="applyWidget">Update countdown</button><a id="configureWidget" href="https://widget-forge.com/widgets/countdown/flip/" target="_blank" rel="noopener noreferrer">More WidgetForge options ↗</a></div>
+            <p class="timer-note">WidgetForge embeds run through a third-party service. The link above opens its full configurator for additional colours, languages and display options.</p>
+        </section>
+
+        <section class="timer-detail" id="focusPanel" hidden>
+            <p class="timer-eyebrow">FOCUS TIMER</p><h1>Make time for focus</h1><p>Alternate between distraction-free study and short breaks.</p>
+            <div class="timer-form-grid"><label>Study minutes <input type="number" id="focusWork" min="1" max="240" value="25"></label><label>Break minutes <input type="number" id="focusBreak" min="1" max="60" value="5"></label></div>
+            <div class="timer-stage" id="focusStage"><div class="timer-phase" id="focusPhase">Study session</div><div class="timer-clock" id="focusDisplay" role="timer">25:00</div><div class="timer-progress"><span id="focusProgress"></span></div></div>
+            <div class="timer-actions"><button class="timer-primary" id="focusStart">Start</button><button id="focusSkip">Skip phase</button><button id="focusReset">Reset</button></div>
+            <button class="timer-zen-button" data-zen="focus">⛶ Full-screen timer</button>
+            <p class="timer-muted" id="focusSessions">Study sessions completed: 0</p>
+        </section>
+
+        <section class="timer-detail" id="examPanel" hidden>
+            <p class="timer-eyebrow">EXAM TIMER</p><h1>Practise under exam conditions</h1><p>Reading and writing stages, time warnings, and an optional marks-based pacing guide.</p>
+            <div class="timer-form-grid"><label>Reading time (minutes) <input id="examReading" type="number" value="10" min="0" max="120"></label><label>Writing time (minutes) <input id="examWriting" type="number" value="180" min="1" max="480"></label><label>Total marks <input id="examMarks" type="number" value="100" min="1" max="500"></label><label class="timer-checkbox"><input id="examSounds" type="checkbox" checked> Audible warnings</label></div>
+            <div class="timer-stage exam-stage" id="examStage">
+                <div class="exam-status"><span id="examStatusBadge">◉ Ready for exam</span></div>
+                <p class="exam-subject">MATHEMATICS ADVANCED</p>
+                <div class="timer-phase" id="examPhase">Ready to begin</div>
+                <div class="timer-clock" id="examDisplay" role="timer">03:10:00</div>
+                <div class="timer-progress"><span id="examProgress"></span></div>
+                <p class="timer-muted" id="examElapsed">Reading and writing time</p>
+                <div class="exam-stage-tags"><span id="examReadingBadge">Reading not started</span><span id="examWritingBadge">Writing not started</span></div>
+                <div class="exam-next-notice"><strong>♧ Next notification</strong><p id="examNextWarning">30 minutes remaining — stay aware of your pacing.</p></div>
+            </div>
+            <p class="timer-muted" id="examPacing">1.8 minutes per mark during writing time</p>
+            <div class="timer-actions"><button class="timer-primary" id="examStart">Start exam</button><button id="examReset">Reset</button><button id="examFullscreen">Full screen</button></div>
+            <p class="timer-note" id="examNotice" aria-live="polite">Reading time will automatically transition to writing time.</p>
+        </section>
+        <button type="button" id="exitZen" class="timer-exit-zen" hidden>⤢ Exit full screen</button>
+    </main>
+</body>
+</html>

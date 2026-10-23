@@ -1,0 +1,183 @@
+/* Timer colour themes */
+/* Each theme works in both light and dark appearance. */
+.timer-shell { --surface:#f7faf8; --panel:#ffffff; --card:#eef5f0; --ink:#173728; --muted:#5e7668; --edge:#d9e7dc; --accent:#16825c; --accent-ink:#ffffff; --track:#d5e8da; --glow:#d6f0df; color:var(--ink); background:var(--surface); }
+.timer-shell[data-theme="burgundy"] { --surface:#faf5ee;--panel:#fffaf4;--card:#f3e7dc;--ink:#4b2430;--muted:#80636a;--edge:#e6d4ca;--accent:#8e3550;--accent-ink:#ffffff;--track:#ecd7d7;--glow:#f7e3dc; }
+.timer-shell[data-theme="minimal"] { --surface:#fafafa;--panel:#ffffff;--card:#f0f0f0;--ink:#202020;--muted:#666666;--edge:#dedede;--accent:#343434;--accent-ink:#ffffff;--track:#e2e2e2;--glow:#f3f3f3; }
+.timer-shell[data-theme="beach"] { --surface:#f9f5e9;--panel:#fffdf5;--card:#e5f3ef;--ink:#285460;--muted:#6b8384;--edge:#cfdfda;--accent:#138b9c;--accent-ink:#ffffff;--track:#d0e8e5;--glow:#fff0cb; }
+.timer-shell[data-theme="underwater"] { --surface:#e9f5f5;--panel:#f5fffe;--card:#d8eaed;--ink:#123e52;--muted:#567a89;--edge:#c2dfe3;--accent:#08778c;--accent-ink:#ffffff;--track:#c4e3e9;--glow:#caeaf1; }
+.timer-shell[data-theme="midnight"] { --surface:#edf3fa;--panel:#ffffff;--card:#e2ebf7;--ink:#1c3057;--muted:#687b9d;--edge:#cfdced;--accent:#3569bd;--accent-ink:#ffffff;--track:#d1e0f4;--glow:#ddeaff; }
+.timer-shell[data-theme="lavender"] { --surface:#f8f5ff;--panel:#fffefe;--card:#efe8fb;--ink:#493866;--muted:#83769b;--edge:#e2d7f2;--accent:#8059bc;--accent-ink:#ffffff;--track:#e6d9f8;--glow:#eee3ff; }
+.timer-shell[data-theme="sunset"] { --surface:#fff5ee;--panel:#fffdfa;--card:#ffe7d8;--ink:#653a38;--muted:#976b67;--edge:#f5d4c2;--accent:#d16a57;--accent-ink:#ffffff;--track:#ffdcc8;--glow:#ffe3b9; }
+.timer-shell[data-appearance="dark"] { --surface:#101c27;--panel:#172736;--card:#213647;--ink:#f4f7f8;--muted:#adbdc9;--edge:#344c5d;--track:#314b5c;--glow:#29465a; }
+.timer-shell[data-appearance="dark"][data-theme="burgundy"] { --surface:#21171d;--panel:#302028;--card:#422c35;--edge:#60424b;--muted:#d3b4bb;--track:#543640; }
+.timer-shell[data-appearance="dark"][data-theme="minimal"] { --surface:#171717;--panel:#222;--card:#303030;--edge:#444;--muted:#bababa;--track:#414141; }
+.timer-shell[data-appearance="dark"][data-theme="beach"] { --surface:#142e36;--panel:#203c44;--card:#294b51;--edge:#42656a;--muted:#b6d2d1;--track:#38575a; }
+.timer-shell[data-appearance="dark"][data-theme="underwater"] { --surface:#071f30;--panel:#0d3043;--card:#194358;--edge:#28566a;--muted:#afd2df;--track:#245066; }
+.timer-shell[data-appearance="dark"][data-theme="midnight"] { --surface:#0c172c;--panel:#182740;--card:#243654;--edge:#385174;--muted:#aebdd4;--track:#344965; }
+.timer-shell[data-appearance="dark"][data-theme="lavender"] { --surface:#1e1a31;--panel:#2b2642;--card:#393052;--edge:#51466a;--muted:#c7badb;--track:#493b64; }
+.timer-shell[data-appearance="dark"][data-theme="sunset"] { --surface:#291e28;--panel:#392734;--card:#503542;--edge:#694957;--muted:#e0b9c2;--track:#5c3c48; }
+
+/* Readable typography and consistent form sizing */
+/* Match the clean sans-serif Question Bank styling on every timer theme. */
+.timer-shell, .timer-shell button, .timer-shell input, .timer-shell select, .timer-shell summary {
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
+}
+.timer-shell, .timer-shell *, .timer-shell *::before, .timer-shell *::after { box-sizing:border-box; }
+.timer-shell { font-size:19px; line-height:1.55; }
+.timer-shell.timer-shell h1 { font-size:clamp(38px,4vw,54px); line-height:1.16; font-weight:750; letter-spacing:-.025em; }
+.timer-shell p { font-size:19px; }
+.timer-shell .timer-eyebrow { font-size:15px; letter-spacing:1.2px; }
+.timer-toolbar label, .timer-theme-controls label { font-size:17px; }
+.timer-shell .timer-theme-controls select, .timer-shell .timer-theme-controls button, .timer-shell .timer-back { font-size:17px; padding:12px 16px; }
+.timer-shell .timer-form-grid { gap:20px; }
+.timer-shell .timer-form-grid label { min-width:0; font-size:19px; font-weight:600; }
+.timer-shell input[type="number"], .timer-shell input[type="text"], .timer-shell input[type="datetime-local"] {
+    width:100% !important;
+    min-width:0 !important;
+    max-width:100% !important;
+    padding:16px 18px !important;
+    font-family:inherit !important;
+    font-size:19px !important;
+    font-weight:450;
+    line-height:1.4;
+}
+.timer-shell .timer-style-picker summary { font-size:20px; font-weight:650; }
+.timer-shell .timer-style-button { font-size:19px; font-weight:550; }
+.timer-shell .timer-mode-card strong { font-size:25px; }
+.timer-shell .timer-mode-card span:not(.mode-icon), .timer-shell .timer-mode-card small { font-size:18px; }
+.timer-shell .timer-actions button, .timer-shell .timer-actions a, .timer-shell .timer-zen-button { font-size:19px; font-weight:600; }
+.timer-shell .timer-stage-label, .timer-shell .timer-phase { font-size:clamp(21px,2vw,27px); }
+.timer-shell .timer-muted, .timer-shell .timer-note { font-size:17px; }
+.timer-shell .exam-next-notice strong { font-size:23px; }
+.timer-shell .exam-next-notice p { font-size:19px; }
+
+/* Timer layout */
+/* All styles are scoped, so this file can be added without replacing style.css. */
+.timer-shell { width:calc(100% - 32px); max-width:1200px; margin:30px auto 70px; padding:clamp(22px,4vw,52px); border:1px solid var(--edge); border-radius:28px; min-height:620px; box-shadow:0 16px 38px rgba(0,0,0,.05); transition:background .2s,color .2s; }
+.timer-shell [hidden] { display:none !important; }
+.timer-shell h1 { font-size:clamp(29px,4vw,44px); margin:0 0 12px; color:var(--ink); }
+.timer-shell p { color:var(--muted); line-height:1.5; }
+.timer-eyebrow { margin:0 0 12px !important; color:var(--accent) !important; letter-spacing:1.5px; font-size:12px; font-weight:700; }
+.timer-toolbar { display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:35px; min-height:43px; }
+.timer-theme-controls { display:flex; align-items:center; justify-content:flex-end; flex-wrap:wrap; gap:10px; margin-left:auto; }
+.timer-theme-controls label { font-size:13px; color:var(--muted); }
+.timer-shell button,.timer-shell select { font-family:inherit; }
+.timer-shell button { cursor:pointer; }
+.timer-theme-controls select,.timer-theme-controls button,.timer-back { padding:10px 12px; border:1px solid var(--edge); border-radius:10px; background:var(--panel); color:var(--ink); font-size:13px; }
+.timer-back { white-space:nowrap; }
+.timer-heading { display:flex; justify-content:space-between; align-items:center; gap:15px; margin:25px 0 34px; }
+.timer-heading-icon { display:grid; place-items:center; background:var(--card); color:var(--accent); border-radius:16px; width:72px; height:72px; font-size:48px; }
+.timer-mode-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
+.timer-mode-card { display:flex; flex-direction:column; align-items:flex-start; min-height:205px; gap:13px; padding:26px; text-align:left; background:var(--panel); border:1px solid var(--edge); border-radius:19px; color:var(--ink); transition:transform .2s,box-shadow .2s,border .2s; }
+.timer-mode-card:hover { transform:translateY(-4px); border-color:var(--accent); box-shadow:0 12px 28px rgba(0,0,0,.07); }
+.timer-mode-card strong { font-size:22px; }
+.timer-mode-card span:not(.mode-icon),.timer-mode-card small { color:var(--muted); }
+.timer-mode-card small { margin-top:auto; }
+.mode-icon { display:grid; place-items:center; width:55px; height:55px; border-radius:14px; background:var(--card); color:var(--accent); font-size:28px; }
+.timer-detail { max-width:100%; }
+.timer-form-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:15px; margin:24px 0; }
+.timer-form-grid label { display:flex; flex-direction:column; gap:9px; color:var(--ink); font-size:14px; }
+.timer-shell input[type="number"],.timer-shell input[type="text"],.timer-shell input[type="datetime-local"] { width:100%; min-width:0; padding:13px; background:var(--panel); border:1px solid var(--edge); border-radius:10px; color:var(--ink); font-size:15px; }
+.timer-checkbox { flex-direction:row !important; align-items:center; }
+.timer-checkbox input { width:auto; }
+.timer-stage { background:var(--panel); border:1px solid var(--edge); border-radius:22px; padding:clamp(22px,4vw,48px); text-align:center; margin:28px 0 15px; }
+.timer-stage-label,.timer-phase { color:var(--muted); font-size:clamp(16px,2vw,23px); }
+.timer-clock { margin:22px auto; color:var(--ink); font-size:clamp(66px,10vw,142px); line-height:1.15; font-weight:700; font-variant-numeric:tabular-nums; letter-spacing:1px; text-align:center; }
+.timer-progress { height:12px; background:var(--track); border-radius:20px; overflow:hidden; margin:25px 0 14px; }
+.timer-progress span { display:block; background:var(--accent); width:0; height:100%; border-radius:inherit; }
+.timer-actions { display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:12px; margin:20px 0; }
+.timer-actions button,.timer-actions a,.timer-zen-button { display:inline-flex; justify-content:center; align-items:center; padding:13px 21px; border:1px solid var(--edge); border-radius:11px; background:var(--card); color:var(--ink); font:inherit; text-decoration:none; }
+.timer-actions .timer-primary { background:var(--accent); border-color:var(--accent); color:var(--accent-ink); }
+.timer-actions button:disabled { opacity:.55; cursor:not-allowed; }
+.timer-zen-button { display:flex; margin:20px auto 0; }
+.timer-muted { text-align:center; color:var(--muted) !important; }
+.timer-note { font-size:13px; }
+.timer-laps { max-width:640px; margin:20px auto; color:var(--ink); }
+.timer-laps li { padding:9px; border-bottom:1px solid var(--edge); }
+
+/* Large WidgetForge preview */
+/* The embed stays intact while its frame receives more space. */
+.timer-style-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin:23px 0; }
+.timer-style-button { padding:15px; border-radius:12px; border:1px solid var(--edge); background:var(--panel); color:var(--ink); }
+.timer-style-button.selected { background:var(--accent); border-color:var(--accent); color:var(--accent-ink); }
+.timer-widget-box { min-height:clamp(490px,65vh,760px); display:flex; flex-direction:column; justify-content:center; align-items:center; overflow:hidden; }
+.timer-widget-mount { width:100%; min-height:410px; display:flex; align-items:center; justify-content:center; }
+.timer-widget-mount > div { width:100%; }
+.timer-widget-mount iframe { display:block; margin:0 auto !important; width:100% !important; height:340px !important; min-height:340px !important; border:0; zoom:1.8; }
+.timer-style-picker { margin:18px 0; border:1px solid var(--edge); border-radius:13px; background:var(--panel); }
+.timer-style-picker summary { display:flex; align-items:center; flex-wrap:wrap; gap:10px; cursor:pointer; padding:16px; color:var(--ink); font-weight:600; }
+.timer-style-picker summary span { padding:5px 9px; border-radius:8px; background:var(--card); color:var(--accent); }
+.timer-style-picker .timer-style-grid { padding:0 16px 16px; margin:0; }
+
+/* Exam stage: uses the airy, high-contrast composition from the reference. */
+.exam-stage { position:relative; padding:32px clamp(18px,3vw,40px); }
+.exam-status { display:flex; justify-content:flex-start; }
+.exam-status span { display:inline-flex; padding:9px 15px; border-radius:50px; background:var(--glow); color:var(--accent); font-weight:700; }
+.exam-subject { margin:34px 0 6px !important; text-transform:uppercase; letter-spacing:1.5px; font-size:17px; }
+.exam-stage .timer-clock { font-size:clamp(72px,10vw,150px); }
+.exam-stage-tags { display:flex; justify-content:center; flex-wrap:wrap; gap:12px; }
+.exam-stage-tags span { padding:9px 16px; border-radius:22px; background:var(--card); color:var(--muted); }
+.exam-next-notice { margin-top:30px; padding:20px 24px; border-radius:17px; background:var(--card); text-align:left; }
+.exam-next-notice strong { color:var(--ink); font-size:19px; }
+.exam-next-notice p { margin:8px 0 0; }
+
+/* Distraction-free full screen */
+/* Hide every setting and action so only the selected large clock remains. */
+.timer-shell.zen-mode { position:fixed; inset:0; z-index:9999; width:100vw; max-width:none; height:100dvh; min-height:0; margin:0; padding:20px; border:0; border-radius:0; display:flex; align-items:center; justify-content:center; overflow:auto; }
+.timer-shell.zen-mode .timer-toolbar,.timer-shell.zen-mode .timer-detail > :not(.timer-stage),.timer-shell.zen-mode .timer-detail > .timer-zen-button { display:none !important; }
+.timer-shell.zen-mode .timer-detail { display:flex; width:100%; height:100%; align-items:center; justify-content:center; }
+.timer-shell.zen-mode .timer-stage { width:100%; max-width:1500px; min-height:70vh; margin:auto; display:flex; flex-direction:column; align-items:center; justify-content:center; border:0; background:transparent; }
+.timer-shell.zen-mode .timer-clock { font-size:clamp(85px,15vw,250px); }
+.timer-shell.zen-mode .timer-widget-box { min-height:80vh; }
+.timer-shell.zen-mode .timer-widget-mount { min-height:65vh; }
+.timer-shell.zen-mode .timer-widget-mount iframe { zoom:2.35; width:100% !important; height:60vh !important; min-height:420px !important; }
+.timer-exit-zen { position:fixed; top:22px; right:25px; z-index:10000; padding:12px 17px; border:1px solid var(--edge); border-radius:13px; background:var(--card); color:var(--ink); }
+
+@media(max-width:700px) {
+    .timer-shell { width:calc(100% - 16px); margin:12px auto; padding:18px; border-radius:18px; }
+    .timer-toolbar { align-items:flex-start; flex-direction:column; }
+    .timer-theme-controls { margin:0; justify-content:flex-start; }
+    .timer-mode-grid,.timer-form-grid { grid-template-columns:1fr; }
+    .timer-style-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .timer-heading-icon { flex-shrink:0; width:54px; height:54px; font-size:33px; }
+    .timer-clock { font-size:clamp(44px,12vw,90px); }
+    .timer-shell.zen-mode .timer-clock { font-size:clamp(55px,13vw,120px); }
+}
+
+/* Compact timer header */
+/* Use one consistent toolbar across the landing page and all timer modes. */
+.timer-shell { padding-top:24px; }
+.timer-shell .timer-toolbar {
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-between;
+    min-height:48px;
+    margin-bottom:12px;
+}
+.timer-shell .timer-theme-controls {
+    display:flex;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    justify-content:flex-end;
+    align-items:center;
+    gap:12px;
+    width:auto;
+    margin-left:auto;
+}
+.timer-shell .timer-theme-controls label { width:auto; flex:none; white-space:nowrap; }
+.timer-shell .timer-theme-controls select {
+    width:250px !important;
+    max-width:250px !important;
+    flex:none;
+    min-width:0;
+}
+.timer-shell .timer-theme-controls button { flex:none; white-space:nowrap; }
+.timer-shell.home-mode .timer-heading { margin:12px 0 24px; }
+.timer-shell.home-mode .timer-mode-grid { gap:15px; }
+.timer-shell.home-mode .timer-mode-card { min-height:175px; padding:21px; gap:9px; }
+
+@media(max-width:700px) {
+    .timer-shell .timer-toolbar { align-items:flex-start; flex-direction:column; gap:10px; }
+    .timer-shell .timer-theme-controls { margin-left:0; flex-wrap:wrap; justify-content:flex-start; }
+    .timer-shell .timer-theme-controls select { width:min(250px,100%) !important; }
+}
