@@ -1,0 +1,1200 @@
+{
+  "paperId": "north-sydney-girls-2026",
+  "sourcePdf": "North Sydney Girls 2026 2U Trials & Solutions.pdf",
+  "school": "North Sydney Girls",
+  "year": 2026,
+  "pdfPages": 80,
+  "status": "draft-needs-review",
+  "notes": "Automatically proposed question and solution crops. All pairs require visual review.",
+  "questions": [
+    {
+      "id": "north-sydney-girls-2026-q1",
+      "number": 1,
+      "questionType": "multiple-choice",
+      "marks": 1,
+      "question": [
+        {
+          "page": 2,
+          "rect": [
+            20,
+            176.25,
+            575.32,
+            534.53
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 50,
+          "rect": [
+            20,
+            176.25,
+            575.32,
+            534.53
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "reviewStatus": "pending",
+      "confidence": "candidate",
+      "warnings": [
+        "Original question number retained"
+      ]
+    },
+    {
+      "id": "north-sydney-girls-2026-q2",
+      "number": 2,
+      "questionType": "multiple-choice",
+      "marks": 1,
+      "question": [
+        {
+          "page": 2,
+          "rect": [
+            20,
+            532.53,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 50,
+          "rect": [
+            20,
+            532.53,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "reviewStatus": "pending",
+      "confidence": "candidate",
+      "warnings": [
+        "Original question number retained"
+      ]
+    },
+    {
+      "id": "north-sydney-girls-2026-q3",
+      "number": 3,
+      "questionType": "multiple-choice",
+      "marks": 1,
+      "question": [
+        {
+          "page": 3,
+          "rect": [
+            20,
+            54.69,
+            575.32,
+            327.53
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 51,
+          "rect": [
+            20,
+            54.69,
+            575.32,
+            327.53
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "reviewStatus": "pending",
+      "confidence": "candidate",
+      "warnings": [
+        "Original question number retained"
+      ]
+    },
+    {
+      "id": "north-sydney-girls-2026-q4",
+      "number": 4,
+      "questionType": "multiple-choice",
+      "marks": 1,
+      "question": [
+        {
+          "page": 3,
+          "rect": [
+            20,
+            325.53,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 51,
+          "rect": [
+            20,
+            325.53,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "reviewStatus": "pending",
+      "confidence": "candidate",
+      "warnings": [
+        "Original question number retained"
+      ]
+    },
+    {
+      "id": "north-sydney-girls-2026-q5",
+      "number": 5,
+      "questionType": "multiple-choice",
+      "marks": 1,
+      "question": [
+        {
+          "page": 4,
+          "rect": [
+            20,
+            52.77,
+            575.32,
+            534.65
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 52,
+          "rect": [
+            20,
+            52.77,
+            575.32,
+            534.65
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "reviewStatus": "pending",
+      "confidence": "candidate",
+      "warnings": [
+        "Original question number retained"
+      ]
+    },
+    {
+      "id": "north-sydney-girls-2026-q6",
+      "number": 6,
+      "questionType": "multiple-choice",
+      "marks": 1,
+      "question": [
+        {
+          "page": 4,
+          "rect": [
+            20,
+            532.65,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 52,
+          "rect": [
+            20,
+            532.65,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "reviewStatus": "pending",
+      "confidence": "candidate",
+      "warnings": [
+        "Original question number retained"
+      ]
+    },
+    {
+      "id": "north-sydney-girls-2026-q7",
+      "number": 7,
+      "questionType": "multiple-choice",
+      "marks": 1,
+      "question": [
+        {
+          "page": 5,
+          "rect": [
+            20,
+            61.41,
+            575.32,
+            403.37
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 53,
+          "rect": [
+            20,
+            61.41,
+            575.32,
+            403.37
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "reviewStatus": "pending",
+      "confidence": "candidate",
+      "warnings": [
+        "Original question number retained"
+      ]
+    },
+    {
+      "id": "north-sydney-girls-2026-q8",
+      "number": 8,
+      "questionType": "multiple-choice",
+      "marks": 1,
+      "question": [
+        {
+          "page": 5,
+          "rect": [
+            20,
+            401.37,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 53,
+          "rect": [
+            20,
+            401.37,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "reviewStatus": "pending",
+      "confidence": "candidate",
+      "warnings": [
+        "Original question number retained"
+      ]
+    },
+    {
+      "id": "north-sydney-girls-2026-q9",
+      "number": 9,
+      "questionType": "multiple-choice",
+      "marks": 1,
+      "question": [
+        {
+          "page": 6,
+          "rect": [
+            20,
+            57.45,
+            575.32,
+            317.93
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 54,
+          "rect": [
+            20,
+            57.45,
+            575.32,
+            317.93
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "reviewStatus": "pending",
+      "confidence": "candidate",
+      "warnings": [
+        "Original question number retained"
+      ]
+    },
+    {
+      "id": "north-sydney-girls-2026-q10",
+      "number": 10,
+      "questionType": "multiple-choice",
+      "marks": 1,
+      "question": [
+        {
+          "page": 6,
+          "rect": [
+            20,
+            315.93,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 54,
+          "rect": [
+            20,
+            315.93,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "reviewStatus": "pending",
+      "confidence": "candidate",
+      "warnings": [
+        "Original question number retained"
+      ]
+    },
+    {
+      "id": "north-sydney-girls-2026-q11",
+      "number": 11,
+      "questionType": "extended-response",
+      "marks": 2,
+      "question": [
+        {
+          "page": 10,
+          "rect": [
+            20,
+            22.89,
+            575.32,
+            224.93
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 56,
+          "rect": [
+            20,
+            22.89,
+            575.32,
+            224.93
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "reviewStatus": "pending",
+      "confidence": "candidate",
+      "warnings": []
+    },
+    {
+      "id": "north-sydney-girls-2026-q12",
+      "number": 12,
+      "questionType": "extended-response",
+      "marks": 5,
+      "question": [
+        {
+          "page": 10,
+          "rect": [
+            20,
+            222.93,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 56,
+          "rect": [
+            20,
+            222.93,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "reviewStatus": "pending",
+      "confidence": "candidate",
+      "warnings": []
+    },
+    {
+      "id": "north-sydney-girls-2026-q13",
+      "number": 13,
+      "questionType": "extended-response",
+      "marks": 3,
+      "question": [
+        {
+          "page": 11,
+          "rect": [
+            20,
+            22.89,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 57,
+          "rect": [
+            20,
+            22.89,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "reviewStatus": "pending",
+      "confidence": "candidate",
+      "warnings": []
+    },
+    {
+      "id": "north-sydney-girls-2026-q14",
+      "number": 14,
+      "questionType": "extended-response",
+      "marks": 2,
+      "question": [
+        {
+          "page": 12,
+          "rect": [
+            20,
+            22.89,
+            575.32,
+            240.77
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 58,
+          "rect": [
+            20,
+            22.89,
+            575.32,
+            240.77
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "reviewStatus": "pending",
+      "confidence": "candidate",
+      "warnings": []
+    },
+    {
+      "id": "north-sydney-girls-2026-q15",
+      "number": 15,
+      "questionType": "extended-response",
+      "marks": 6,
+      "question": [
+        {
+          "page": 12,
+          "rect": [
+            20,
+            238.77,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 58,
+          "rect": [
+            20,
+            238.77,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "reviewStatus": "pending",
+      "confidence": "candidate",
+      "warnings": []
+    },
+    {
+      "id": "north-sydney-girls-2026-q16",
+      "number": 16,
+      "questionType": "extended-response",
+      "marks": 3,
+      "question": [
+        {
+          "page": 13,
+          "rect": [
+            20,
+            22.89,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 59,
+          "rect": [
+            20,
+            22.89,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "reviewStatus": "pending",
+      "confidence": "candidate",
+      "warnings": []
+    },
+    {
+      "id": "north-sydney-girls-2026-q17",
+      "number": 17,
+      "questionType": "extended-response",
+      "marks": 4,
+      "question": [
+        {
+          "page": 14,
+          "rect": [
+            20,
+            22.89,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 60,
+          "rect": [
+            20,
+            22.89,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "reviewStatus": "pending",
+      "confidence": "candidate",
+      "warnings": []
+    },
+    {
+      "id": "north-sydney-girls-2026-q18",
+      "number": 18,
+      "questionType": "extended-response",
+      "marks": 5,
+      "question": [
+        {
+          "page": 15,
+          "rect": [
+            20,
+            22.89,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 61,
+          "rect": [
+            20,
+            22.89,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "reviewStatus": "pending",
+      "confidence": "candidate",
+      "warnings": []
+    },
+    {
+      "id": "north-sydney-girls-2026-q19",
+      "number": 19,
+      "questionType": "extended-response",
+      "marks": 2,
+      "question": [
+        {
+          "page": 22,
+          "rect": [
+            20,
+            22.89,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 63,
+          "rect": [
+            20,
+            22.89,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "reviewStatus": "pending",
+      "confidence": "candidate",
+      "warnings": []
+    },
+    {
+      "id": "north-sydney-girls-2026-q20",
+      "number": 20,
+      "questionType": "extended-response",
+      "marks": 7,
+      "question": [
+        {
+          "page": 23,
+          "rect": [
+            20,
+            22.89,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 64,
+          "rect": [
+            20,
+            22.89,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "reviewStatus": "pending",
+      "confidence": "candidate",
+      "warnings": []
+    },
+    {
+      "id": "north-sydney-girls-2026-q21",
+      "number": 21,
+      "questionType": "extended-response",
+      "marks": 6,
+      "question": [
+        {
+          "page": 24,
+          "rect": [
+            20,
+            22.89,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 65,
+          "rect": [
+            20,
+            22.89,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "reviewStatus": "pending",
+      "confidence": "candidate",
+      "warnings": []
+    },
+    {
+      "id": "north-sydney-girls-2026-q22",
+      "number": 22,
+      "questionType": "extended-response",
+      "marks": 3,
+      "question": [
+        {
+          "page": 25,
+          "rect": [
+            20,
+            22.89,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 66,
+          "rect": [
+            20,
+            22.89,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "reviewStatus": "pending",
+      "confidence": "candidate",
+      "warnings": []
+    },
+    {
+      "id": "north-sydney-girls-2026-q23",
+      "number": 23,
+      "questionType": "extended-response",
+      "marks": 3,
+      "question": [
+        {
+          "page": 26,
+          "rect": [
+            20,
+            37.89,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 67,
+          "rect": [
+            20,
+            37.89,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "reviewStatus": "pending",
+      "confidence": "candidate",
+      "warnings": []
+    },
+    {
+      "id": "north-sydney-girls-2026-q24",
+      "number": 24,
+      "questionType": "extended-response",
+      "marks": 4,
+      "question": [
+        {
+          "page": 27,
+          "rect": [
+            20,
+            22.89,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 68,
+          "rect": [
+            20,
+            22.89,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "reviewStatus": "pending",
+      "confidence": "candidate",
+      "warnings": []
+    },
+    {
+      "id": "north-sydney-girls-2026-q25",
+      "number": 25,
+      "questionType": "extended-response",
+      "marks": 4,
+      "question": [
+        {
+          "page": 28,
+          "rect": [
+            20,
+            22.89,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 69,
+          "rect": [
+            20,
+            22.89,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "reviewStatus": "pending",
+      "confidence": "candidate",
+      "warnings": []
+    },
+    {
+      "id": "north-sydney-girls-2026-q26",
+      "number": 26,
+      "questionType": "extended-response",
+      "marks": 2,
+      "question": [
+        {
+          "page": 34,
+          "rect": [
+            20,
+            22.89,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 71,
+          "rect": [
+            20,
+            22.89,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "reviewStatus": "pending",
+      "confidence": "candidate",
+      "warnings": []
+    },
+    {
+      "id": "north-sydney-girls-2026-q27",
+      "number": 27,
+      "questionType": "extended-response",
+      "marks": 5,
+      "question": [
+        {
+          "page": 35,
+          "rect": [
+            20,
+            22.89,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 72,
+          "rect": [
+            20,
+            22.89,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "reviewStatus": "pending",
+      "confidence": "candidate",
+      "warnings": []
+    },
+    {
+      "id": "north-sydney-girls-2026-q28",
+      "number": 28,
+      "questionType": "extended-response",
+      "marks": 4,
+      "question": [
+        {
+          "page": 36,
+          "rect": [
+            20,
+            22.89,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 73,
+          "rect": [
+            20,
+            22.89,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "reviewStatus": "pending",
+      "confidence": "candidate",
+      "warnings": []
+    },
+    {
+      "id": "north-sydney-girls-2026-q29",
+      "number": 29,
+      "questionType": "extended-response",
+      "marks": 4,
+      "question": [
+        {
+          "page": 37,
+          "rect": [
+            20,
+            22.89,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 74,
+          "rect": [
+            20,
+            22.89,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "reviewStatus": "pending",
+      "confidence": "candidate",
+      "warnings": []
+    },
+    {
+      "id": "north-sydney-girls-2026-q30",
+      "number": 30,
+      "questionType": "extended-response",
+      "marks": 6,
+      "question": [
+        {
+          "page": 38,
+          "rect": [
+            20,
+            22.89,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        },
+        {
+          "page": 39,
+          "rect": [
+            20,
+            23.08,
+            575.32,
+            780
+          ],
+          "continued": true,
+          "maskNumber": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 75,
+          "rect": [
+            20,
+            22.89,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        },
+        {
+          "page": 76,
+          "rect": [
+            20,
+            23.08,
+            575.32,
+            780
+          ],
+          "continued": true,
+          "maskNumber": false
+        }
+      ],
+      "reviewStatus": "pending",
+      "confidence": "candidate",
+      "warnings": [
+        "Multi-page question: verify continuation"
+      ]
+    },
+    {
+      "id": "north-sydney-girls-2026-q31",
+      "number": 31,
+      "questionType": "extended-response",
+      "marks": 3,
+      "question": [
+        {
+          "page": 40,
+          "rect": [
+            20,
+            22.89,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 77,
+          "rect": [
+            20,
+            22.89,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        }
+      ],
+      "reviewStatus": "pending",
+      "confidence": "candidate",
+      "warnings": []
+    },
+    {
+      "id": "north-sydney-girls-2026-q32",
+      "number": 32,
+      "questionType": "extended-response",
+      "marks": 7,
+      "question": [
+        {
+          "page": 42,
+          "rect": [
+            20,
+            22.89,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        },
+        {
+          "page": 43,
+          "rect": [
+            20,
+            23.08,
+            575.32,
+            780
+          ],
+          "continued": true,
+          "maskNumber": false
+        }
+      ],
+      "solution": [
+        {
+          "page": 78,
+          "rect": [
+            20,
+            22.89,
+            575.32,
+            780
+          ],
+          "continued": false,
+          "maskNumber": false
+        },
+        {
+          "page": 79,
+          "rect": [
+            20,
+            23.08,
+            575.32,
+            780
+          ],
+          "continued": true,
+          "maskNumber": false
+        }
+      ],
+      "reviewStatus": "pending",
+      "confidence": "candidate",
+      "warnings": [
+        "Multi-page question: verify continuation"
+      ]
+    }
+  ],
+  "diagnostics": []
+}
