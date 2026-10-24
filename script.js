@@ -745,4 +745,34 @@ function initialisePage() {
     updateMatchingCount();
 }
 
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Scroll reveal
+  // Shows elements when they enter the viewport
+
+  const revealElements = document.querySelectorAll(".reveal");
+
+  if (!("IntersectionObserver" in window)) {
+    revealElements.forEach(element => {
+      element.classList.add("visible");
+    });
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.15
+  });
+
+  revealElements.forEach(element => {
+    observer.observe(element);
+  });
+});
+
 initialisePage();

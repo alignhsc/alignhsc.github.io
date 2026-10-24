@@ -1,0 +1,130 @@
+<!-- GALTON BOARD: paste this whole block into your About section -->
+<div class="gb-wrap">
+  <canvas id="gb-canvas" aria-label="Interactive Galton board animation"></canvas>
+  <div class="gb-btns">
+    <button type="button" id="gb-one">Drop a ball</button>
+    <button type="button" id="gb-many">Drop 100</button>
+    <button type="button" id="gb-reset">Reset</button>
+  </div>
+  <p class="gb-cap">Every ball bounces left or right at random, yet together they build a bell curve: the normal distribution.</p>
+</div>
+
+<style>
+  .gb-wrap{max-width:520px;margin:28px 0;text-align:left}
+  #gb-canvas{width:100%;display:block;border-radius:14px;background:#fff;border:1px solid #e3e5ef;box-sizing:border-box;cursor:pointer}
+  .gb-btns{display:flex;gap:8px;justify-content:flex-start;margin-top:12px;flex-wrap:wrap}
+  .gb-btns button{border:0;border-radius:999px;padding:8px 16px;background:#151585;color:#fff;font:inherit;font-size:.9rem;cursor:pointer}
+  .gb-btns button:last-child{background:transparent;border:1px solid currentColor;color:inherit}
+  .gb-cap{margin:12px 0 0;font-size:.95rem;opacity:.8}
+</style>
+
+<script>
+(function () {
+  var R = 10; // rows of pegs
+  var cv = document.getElementById('gb-canvas');
+  var ctx = cv.getContext('2d');
+  var W, H, gap, topY, rowH, baseY;
+  var balls = [], bins = new Array(R + 1).fill(0), total = 0, queue = 0, lastLaunch = 0;
+
+  function size() {
+    var dpr = window.devicePixelRatio || 1;
+    W = cv.clientWidth;
+    H = Math.round(W * 0.85);
+    cv.style.height = H + 'px';
+    cv.width = W * dpr;
+    cv.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    gap = W / (R + 2);
+    topY = 24;
+    rowH = (H * 0.55 - topY) / R;
+    baseY = H - 8;
+  }
+
+  function choose(n, k) {
+    var r = 1;
+    for (var i = 1; i <= k; i++) r = r * (n - k + i) / i;
+    return r;
+  }
+
+  function drop() {
+    var path = [];
+    for (var i = 0; i < R; i++) path.push(Math.random() < 0.5 ? 1 : -1);
+    balls.push({ t: 0, path: path });
+  }
+
+  function dot(x, y, r, c) {
+    ctx.beginPath();
+    ctx.arc(x, y, r, 0, Math.PI * 2);
+    ctx.fillStyle = c;
+    ctx.fill();
+  }
+
+  function frame(now) {
+    ctx.clearRect(0, 0, W, H);
+
+    if (queue > 0 && now - lastLaunch > 60) { drop(); queue--; lastLaunch = now; }
+
+    // pegs
+    for (var r = 0; r < R; r++)
+      for (var k = 0; k <= r; k++)
+        dot(W / 2 + (k - r / 2) * gap, topY + r * rowH, 3, '#b9bdd3');
+
+    // bars
+    var cap = baseY - (topY + R * rowH + rowH * 1.2);
+    var max = Math.max.apply(null, bins);
+    var unit = Math.min(6, max ? cap / max : 6);
+    ctx.fillStyle = 'rgba(21,21,133,0.85)';
+    bins.forEach(function (c, i) {
+      var h = c * unit;
+      ctx.fillRect(W / 2 + (i - R / 2) * gap - gap * 0.4, baseY - h, gap * 0.8, h);
+    });
+
+    // expected bell curve (appears after a few balls)
+    if (total >= 20) {
+      ctx.beginPath();
+      for (var i = 0; i <= R; i++) {
+        var x = W / 2 + (i - R / 2) * gap;
+        var y = baseY - total * choose(R, i) / Math.pow(2, R) * unit;
+        i ? ctx.lineTo(x, y) : ctx.moveTo(x, y);
+      }
+      ctx.setLineDash([5, 4]);
+      ctx.strokeStyle = '#e8590c';
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+      ctx.setLineDash([]);
+    }
+
+    // falling balls
+    balls = balls.filter(function (b) {
+      b.t += 0.09;
+      if (b.t >= R + 0.8) {
+        var idx = b.path.filter(function (v) { return v > 0; }).length;
+        bins[idx]++; total++;
+        return false;
+      }
+      var row = Math.min(Math.floor(b.t), R - 1), f = b.t - row, off = 0;
+      if (b.t >= R) { for (var i = 0; i < R; i++) off += b.path[i]; }
+      else {
+        for (var j = 0; j < row; j++) off += b.path[j];
+        off += b.path[row] * f;
+      }
+      var bounce = b.t < R ? Math.abs(Math.sin(f * Math.PI)) * 5 : 0;
+      dot(W / 2 + off * gap / 2, topY + b.t * rowH - bounce, 5, '#e8590c');
+      return true;
+    });
+
+    requestAnimationFrame(frame);
+  }
+
+  document.getElementById('gb-one').onclick = function () { drop(); };
+  document.getElementById('gb-many').onclick = function () { queue += 100; };
+  document.getElementById('gb-reset').onclick = function () {
+    balls = []; bins = new Array(R + 1).fill(0); total = 0; queue = 0;
+  };
+  cv.addEventListener('click', drop);
+  window.addEventListener('resize', size);
+
+  size();
+  requestAnimationFrame(frame);
+})();
+</script>

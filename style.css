@@ -564,3 +564,131 @@ button {
         display: none !important;
     }
 }
+
+
+/* About Page */
+/* Main layout and spacing */
+
+.about-page {
+  width: 100%;
+}
+
+.about-section {
+  padding: 90px 24px;
+}
+
+.about-container {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.about-container h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 40px;
+}
+
+.about-container h2 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  margin-bottom: 24px;
+}
+
+.about-container p {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  margin-bottom: 24px;
+}
+
+.about-story {
+  background: var(--surface-secondary, transparent);
+}
+
+/* Galton Board */
+/* Responsive embedded simulation */
+
+.galton-frame {
+  width: 100%;
+  height: 680px;
+  margin-top: 32px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.galton-frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Scroll Reveal */
+/* Paragraphs fade and slide into view */
+
+/* Scroll Reveal Animation */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-section {
+    padding: 35px 24px;
+  }
+
+  .galton-frame {
+    height: 550px;
+  }
+
+  .about-section + .about-section {
+    padding-top: 10px;
+  }
+}
+
+/* About page spacing fixes */
+
+.about-page .about-section {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  min-height: auto;
+  height: auto;
+}
+
+.about-page .about-section + .about-section {
+  margin-top: 0;
+  padding-top: 10px;
+}
+
+.about-page .about-container {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.about-page .about-container p:last-child {
+  margin-bottom: 0;
+}
+
+/* Coming Soon Message */
+
+.coming-soon {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-secondary, #777);
+  opacity: 0.8;
+}
